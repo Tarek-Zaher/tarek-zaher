@@ -35,7 +35,7 @@ export default function GsapTest() {
         <div ref={container} className="w-full h-[300vh] bg-[#87CEEB] relative overflow-x-hidden">
             <h1 className=".title text-center text-4xl font-bold pt-20 px-8">Scroll to see a floating cloud 😃☁️</h1>
             <div className="cloud">
-                <img src="images/smilingcloud.svg" alt="White cartoon cloud with a smiling face" />
+                <img src="../images/smilingcloud.svg" alt="White cartoon cloud with a smiling face" />
             </div>
         </div>
     );
