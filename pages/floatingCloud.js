@@ -12,8 +12,9 @@ export default function GsapTest() {
     const container = useRef();
 
     useGSAP(() => {
-        gsap.to(
+        gsap.fromTo(
             ".cloud",
+            {x: '-100vw' },
             {
                 scrollTrigger: {
                     trigger: '.title',
@@ -23,7 +24,7 @@ export default function GsapTest() {
                     pin: '.cloud',
                 },
                 duration: 5,
-                x: '130vw',
+                x: '100vw',
             }
         );
 
@@ -31,8 +32,8 @@ export default function GsapTest() {
 
     return (
         <div ref={container} className="w-full h-[300vh] bg-[#87CEEB] relative">
-            <h1 className=".title text-center text-4xl font-bold pt-20">Scroll to see a floating cloud 😃☁️</h1>
-            <div className="cloud left-[-30vw]">
+            <h1 className=".title text-center text-4xl font-bold pt-20 px-8">Scroll to see a floating cloud 😃☁️</h1>
+            <div className="cloud">
                 <img src="images/smilingcloud.svg" alt="White cartoon cloud with a smiling face" />
             </div>
         </div>
