@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
+import AnimationFolder from '../components/animationFolder';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
@@ -13,7 +14,7 @@ export async function getStaticProps() {
     },
   };
 }
- 
+
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
@@ -27,16 +28,27 @@ export default function Home({ allPostsData }) {
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Recent Animations</h2>
+        <div className=''>
+          <AnimationFolder size={1} color="#3D72A4" className="" items={[
+            <div>🚧</div>,
+            <div className="text-right">🚧</div>,
+            <Link href="/animations/floatingCloud">
+              <div className='text-center text-[44px]'>☁️</div>
+            </Link> ]} />
+        </div>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Posts</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-            <Link href={`/posts/${id}`}>{title}</Link>
-            <br />
-            <small className={utilStyles.lightText}>
-              <Date dateString={date} />
-            </small>
-          </li>
+              <Link href={`/posts/${id}`}>{title}</Link>
+              <br />
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
+            </li>
           ))}
         </ul>
       </section>
