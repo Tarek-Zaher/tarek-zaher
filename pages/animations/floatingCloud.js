@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Link from 'next/link';
+import Layout from '../../components/layout';
 
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -33,14 +33,13 @@ export default function GsapTest() {
         }, { scope: container })
 
     return (
-        <div ref={container} className="w-full h-[300vh] bg-[#87CEEB] relative overflow-x-hidden">
-            <h1 className="title text-center text-4xl font-bold pt-20 px-8">Scroll to see a floating cloud 😃☁️</h1>
-            <div className="cloud">
-                <img src="../images/smilingcloud.svg" alt="White cartoon cloud with a smiling face" />
+        <Layout>
+            <div ref={container} className="w-full h-[300vh] bg-[#87CEEB] relative overflow-x-hidden">
+                <h1 className="title text-center text-4xl font-bold pt-20 px-8">Scroll to see a floating cloud 😃☁️</h1>
+                <div className="cloud">
+                    <img src="../images/smilingcloud.svg" alt="White cartoon cloud with a smiling face" />
+                </div>
             </div>
-            <div className="backToHome">
-                <Link href="/">← Back to home</Link>
-            </div>
-        </div>
+        </Layout>
     );
 }

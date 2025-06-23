@@ -158,7 +158,7 @@ const AnimationFolder = ({
             style={{
               backgroundColor: color,
               borderRadius: "5px 10px 10px 10px",
-              ...(open && { transform: "skew(-15deg) scaleY(0.6)" }),
+              ...(open && { transform: "skew(-15deg)" }),
             }}
           ></div>
         </div>

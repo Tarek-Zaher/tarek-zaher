@@ -3,10 +3,10 @@ import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
- 
+
 const name = 'Tarek Zaher';
 export const siteTitle = 'Tarek Zaher\'s Personal Website';
- 
+
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
@@ -64,6 +64,6 @@ export default function Layout({ children, home }) {
           <Link href="/">← Back to home</Link>
         </div>
       )}
-    </div>
+    </div >
   );
 }

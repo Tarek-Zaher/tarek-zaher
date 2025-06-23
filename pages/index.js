@@ -21,8 +21,8 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Hello, my name is Tarek! I'm a web developer, writer, and human.</p>
+      <section className={`${utilStyles.headingMd} prose`}>
+        <p>Hello, my name is Tarek! I'm a web developer living in Austin, Texas.</p>
         <p>
           I'm passionate about creating engaging web experiences and appreciating the beauty of the world around us.
         </p>
@@ -35,7 +35,7 @@ export default function Home({ allPostsData }) {
             <div className="text-right">🚧</div>,
             <Link href="/animations/floatingCloud">
               <div className='text-center text-[44px]'>☁️</div>
-            </Link> ]} />
+            </Link>]} />
         </div>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
