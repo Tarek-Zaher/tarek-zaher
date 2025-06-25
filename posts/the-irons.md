@@ -3,7 +3,7 @@ title: "What is the Hero's Journey?"
 date: '2025-06-22'
 ---
 
-*The following is a rough draft of the text of a project I'm working on for my favorite band The Irons.*
+*The following is a rough draft of the text of [a project](/experiences/the-irons) I'm working on for my favorite band The Irons.*
 
 The Hero's Journey is a recurring narrative pattern first identified by Joseph Campbell in his book *The Hero with a Thousand Faces* (1949). It is also known as **the monomyth** — a single story that echoes across all times and cultures, from ancient myths and epics to modern blockbusters.
 
