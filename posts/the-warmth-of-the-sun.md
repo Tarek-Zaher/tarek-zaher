@@ -15,7 +15,7 @@ Below are the selections I've gathered so far:
 2. [The Golden Apples of the Sun by Ray Bradbury](https://s3.us-west-1.wasabisys.com/luminist/EB/B/Bradbury%20-%20The%20Golden%20Apples%20of%20the%20Sun.pdf)
 3. [Lieutenant Mamiya's Long Story from The Wind-Up Bird Chronicle by Haruki Murakami](https://deadword.com/site1/place/murakami/index.html)
 4. [The Sun in Our Midst by Kerry Temple](https://magazine.nd.edu/stories/the-sun-in-our-midst/)
-4. [All Summer in a Day by Ray Bradbury](https://www.stcypriansprimaryacademy.co.uk/wp-content/uploads/2021/01/All-Summer-in-a-Day-by-Ray-Bradbury.pdf) (too much Ray Bradbury? Might have to choose between the two)
+4. [The Pale Blue Dot by Carl Sagan](https://www.planetary.org/worlds/pale-blue-dot)
 
 ## Fun Sun Facts
 
