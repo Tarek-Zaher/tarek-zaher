@@ -56,8 +56,11 @@ export default function Starfield(props: Props) {
 				const putPixel = (x: number, y: number, brightness: number) => {
 					const rgb =
 						'rgba(' + starColor[0] + ',' + starColor[1] + ',' + starColor[2] + ',' + brightness + ')';
-					c.fillStyle = rgb;
-					c.fillRect(x, y, 1, 1);
+					c.beginPath();
+					c.moveTo(x, y);
+					c.lineTo(x + 1, y + 1);
+					c.strokeStyle = rgb;
+					c.stroke();
 				};
 
 				const moveStars = (distance: number) => {
@@ -139,7 +142,7 @@ export default function Starfield(props: Props) {
 				right: 0,
 				bottom: 0,
 				left: 0,
-				zIndex: 10,
+				zIndex: 0,
 				opacity: 1,
 				pointerEvents: 'none',
 				mixBlendMode: 'screen',

@@ -43,14 +43,13 @@ export default function TheIrons() {
 
         gsap.set(peterClearBoyRef.current, { scale: 0 });
 
-        let tl = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+        let tl = gsap.timeline();
 
         tl.to(peterClearBoyRef.current, {
             duration: 8,
             rotate: 360,
             scale: 1,
             ease: "linear",
-            repeat: 0,
         })
 
     }, []);
@@ -64,7 +63,7 @@ export default function TheIrons() {
             <main>
                 <section className="w-full h-auto">
                     <Starfield
-                        starCount={2000}
+                        starCount={3000}
                         starColor={[255, 255, 255]}
                         speedFactor={0.05}
                         backgroundColor="black"
