@@ -7,6 +7,11 @@ import Link from 'next/link';
 import Date from '../components/date';
 import { libreBaskervilleBold } from '../components/layout';
 import { libreBaskervilleRegular } from '../components/layout';
+import { useRef } from 'react';
+import gsap from 'gsap';
+import SplitText from 'gsap/SplitText';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from '@gsap/react';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -17,22 +22,42 @@ export async function getStaticProps() {
   };
 }
 
+gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
+
 export default function Home({ allPostsData }) {
+
+  const section1 = useRef();
+
+  useGSAP(() => {
+
+    let split = SplitText.create(".split", { type: "lines", mask: "lines" });
+
+    gsap.from(split.lines, {
+      duration: 2,
+      y: 100,
+      autoAlpha: 0,
+      stagger: 0.05,
+      scrollTrigger: ".passionStatement"
+    });
+
+  }, { scope: section1 });
+
+
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section>
+      <section ref={section1}>
         <div className={`bg-[url(/images/beautiful_clouds.png)] bg-cover bg-center h-[250px] ${utilStyles.bentoRectangle}`}></div>
-        
+
         <div className={`bg-[#392F2D] ${utilStyles.bentoRectangle}`}>
           <h3 className={`text-white p-8 text-2xl ${libreBaskervilleBold.className}`}>I'm</h3>
           <h3 className={`text-white text-center text-8xl px-4 my-4 ${libreBaskervilleBold.className} h-auto`}>Tarek</h3>
         </div>
 
-        <h2 className={`m-[20px] px-4 pt-4 pb-0 text-black text-xl ${libreBaskervilleRegular.className}`}>I'm passionate about creating engaging web experiences and appreciating the beauty of the world around us.</h2>
-        
+        <h2 className={`passionStatement split m-[20px] px-4 pt-4 pb-0 text-black text-xl ${libreBaskervilleRegular.className}`}>I'm passionate about creating engaging web experiences and appreciating the beauty of the world around us.</h2>
+
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-4 grid-rows-1 gap-1">
             <svg width="80" height="80" viewBox="0 0 80 80" className="block">
