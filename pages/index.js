@@ -36,6 +36,11 @@ export default function Home({ allPostsData }) {
   const handleNameClick = contextSafe(() => {
     clickCounter++;
 
+    gsap.to(".nameBento", {
+      x: 10,
+      y: 5
+    })
+
     switch (clickCounter) {
       case 1:
         nameTl
@@ -138,7 +143,7 @@ export default function Home({ allPostsData }) {
       <section ref={section1}>
         <div className={`bg-[url(/images/beautiful_clouds.png)] bg-cover bg-center h-[250px] ${utilStyles.bentoRectangle}`}></div>
 
-        <div onClick={handleNameClick} className={`bg-[#392F2D] h-[250px] overflow-hidden ${utilStyles.bentoRectangle}`}>
+        <div onClick={handleNameClick} className={`${utilStyles.nameBento} bg-[#392F2D] h-[250px] overflow-hidden ${utilStyles.bentoRectangle}`}>
           <h3 className={`text-white p-8 text-2xl ${libreBaskervilleBold.className}`}>I'm</h3>
           <h3 className={`tarekText text-white text-center text-8xl px-4 my-4 ${libreBaskervilleBold.className} h-auto`}>Tarek</h3>
           <h3 className={`webDevText text-white text-5xl px-8 ${libreBaskervilleBold.className} h-auto`}>a web developer</h3>
@@ -148,7 +153,7 @@ export default function Home({ allPostsData }) {
 
         <h2 className={`passionStatement split m-[20px] px-4 pt-4 pb-0 text-black text-xl ${libreBaskervilleRegular.className}`}>I'm passionate about creating engaging web experiences and appreciating the beauty of the world around us.</h2>
 
-        <div className="circles flex items-center justify-center">
+        <div className="circles flex items-center justify-center my-8">
           <div className="grid grid-cols-4 grid-rows-1 gap-1">
             <svg width="80" height="80" viewBox="0 0 80 80" className="block">
               <path d="M40,0 A40,40 0 1,0 40,80 A40,40 0 1,0 40,0" fill="#95B8D1" />
