@@ -1,6 +1,7 @@
 ---
-title: "What is the Hero's Journey?"
+title: "The Hero's Journey"
 date: '2025-06-22'
+type: "Rough Draft"
 ---
 
 *The following is a rough draft of the text of [a project](/experiences/the-irons) I'm working on for my favorite band The Irons.*

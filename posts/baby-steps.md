@@ -1,6 +1,7 @@
 ---
 title: "Baby Steps"
 date: "2025-06-22"
+type: "Log"
 ---
 
 Lots of updates! Firstly, I made it through the GSAP basic tutorial and the ScrollTrigger documentation. I made my first baby step of a little floating cloud animation you can see [here](/animations/floatingCloud).

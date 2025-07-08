@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
-import AnimationFolder from '../components/animationFolder';
+import PostPreview from '../components/PostPreview.jsx'
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
@@ -26,9 +26,9 @@ gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
 export default function Home({ allPostsData }) {
 
-  const section1 = useRef();
+  const introductionSection = useRef();
 
-  const { contextSafe } = useGSAP({ scope: section1 });
+  const { contextSafe } = useGSAP({ scope: introductionSection });
 
   let nameTl = gsap.timeline();
 
@@ -113,7 +113,7 @@ export default function Home({ allPostsData }) {
             display: "block",
             autoAlpha: 1,
           })
-          clickCounter = 0;
+        clickCounter = 0;
         break;
       default:
         break;
@@ -122,8 +122,8 @@ export default function Home({ allPostsData }) {
 
   useGSAP(() => {
 
-    SplitText.create(".split", { 
-      type: "lines", 
+    SplitText.create(".split", {
+      type: "lines",
       mask: "lines",
       autosplit: "true",
       onSplit(self) {
@@ -145,7 +145,7 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section ref={section1}>
+      <section ref={introductionSection} className={`border-b border-[#392F2D]`}>
         <div className={`bg-[url(/images/clouds/beautiful_clouds.png)] bg-cover bg-center h-[250px] ${utilStyles.bentoRectangle}`}></div>
 
         <div onClick={handleNameClick} className={`${utilStyles.nameBento} bg-[#392F2D] h-[250px] overflow-hidden ${utilStyles.bentoRectangle}`}>
@@ -178,25 +178,24 @@ export default function Home({ allPostsData }) {
         <div className={`bg-[url(/images/tarek.png)] bg-cover bg-center h-[500px] ${utilStyles.bentoRectangle}`}></div>
 
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Recent Animations</h2>
-        <div className=''>
-          <AnimationFolder size={1} color="#3D72A4" className="" items={[
-            <div>🚧</div>,
-            <div className="text-right">🚧</div>,
-            <Link href="/animations/floatingCloud">
-              <div className='text-center text-[44px]'>☁️</div>
-            </Link>]} />
-        </div>
+
+      <section id="fragments" className={`border-b border-[#392F2D]`}>
+        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-[20px]`}>Fragments</h2>
+
+        <PostPreview post={allPostsData[0]} color="#95B8D1" height="300px" />
+        <PostPreview post={allPostsData[1]} color="#8A9B68" height="300px" overlap />
+        <PostPreview post={allPostsData[2]} color="#D7816A" height="200px" overlap />
       </section>
+
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Posts</h2>
+        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-[20px]`}>Fragments</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostsData.slice(0, 3).map(({ id, date, title, type }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/posts/${id}`}>{title}</Link>
               <br />
               <small className={utilStyles.lightText}>
+                {type}
                 <Date dateString={date} />
               </small>
             </li>

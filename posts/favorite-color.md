@@ -1,6 +1,7 @@
 ---
 title: "Start With Your Favorite Color"
 date: "2025-07-02"
+type: "Essay"
 ---
 
 Have you ever had a feeling trapped inside of your heart? It feels a little bit like an invisible hand squeezing your heart tighter and tighter. Many people think this is a bad thing. Actually, there's no invisible hand at all! What's really happening is a little man is trying to bribe you. This little man loves you and was born in your brain, but at some point you kicked him out and sent him down to live inside of your heart. Because you sent him down to live there so young, he doesn't know much about the world but he remembers how good it felt to be hugged. Every now and then the little man has something important he wants to say to you or to others but he can't get back up to the brain which we all know houses the capacity for language and any other kind of communication. The reason he can't get up to the brain is his electric traincar doesn't have any juice. There's only one way to ignite the electric traincar's engine:
