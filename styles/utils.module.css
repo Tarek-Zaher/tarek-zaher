@@ -5,11 +5,11 @@
 }
 
 .nameBento {
-  box-shadow: #1A1A1A 0px 7px;
+  box-shadow: #232323 2px 5px;
 }
 
 .nameBento:active {
-  transform: translateY(7px);
+  transform: translateY(5px) translateX(2px);
   box-shadow: none;
 }
 

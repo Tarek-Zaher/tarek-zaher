@@ -122,17 +122,22 @@ export default function Home({ allPostsData }) {
 
   useGSAP(() => {
 
-    let split = SplitText.create(".split", { type: "lines", mask: "lines" });
-
-    gsap.from(split.lines, {
-      duration: 2,
-      y: 100,
-      autoAlpha: 0,
-      stagger: 0.05,
-      scrollTrigger: ".circles"
+    SplitText.create(".split", { 
+      type: "lines", 
+      mask: "lines",
+      autosplit: "true",
+      onSplit(self) {
+        return gsap.from(self.lines, {
+          duration: 2,
+          y: 100,
+          autoAlpha: 0,
+          stagger: 0.05,
+          scrollTrigger: ".circles",
+          onComplete: () => self.revert()
+        });
+      }
     });
-
-  }, { scope: section1 });
+  });
 
 
   return (
@@ -141,7 +146,7 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section ref={section1}>
-        <div className={`bg-[url(/images/beautiful_clouds.png)] bg-cover bg-center h-[250px] ${utilStyles.bentoRectangle}`}></div>
+        <div className={`bg-[url(/images/clouds/beautiful_clouds.png)] bg-cover bg-center h-[250px] ${utilStyles.bentoRectangle}`}></div>
 
         <div onClick={handleNameClick} className={`${utilStyles.nameBento} bg-[#392F2D] h-[250px] overflow-hidden ${utilStyles.bentoRectangle}`}>
           <h3 className={`text-white p-8 text-2xl ${libreBaskervilleBold.className}`}>I'm</h3>
