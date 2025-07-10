@@ -3,7 +3,6 @@ import { getAllPostIds, getPostData } from '../../lib/posts';
 import Head from 'next/head';
 import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.css';
-
  
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -24,14 +23,7 @@ export async function getStaticPaths() {
  
 export default function Post({ postData }) {
   return (
-        <article className={`bg-[${postData.color}] height-full width-full`}>
-          <h5 className={`text-sm pt-[20px] px-[10px] pb-[10px] text-center`}>{postData.type}</h5>
-          <h2 className={`text-center text-[1.5rem] leading-[1.4] my-4 px-8`}>{postData.title}</h2>
-          <hr></hr>
-          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        </article>
-
-    /*<Layout>
+    <Layout>
         <Head>
             {postData.title}
         </Head>
@@ -42,6 +34,6 @@ export default function Post({ postData }) {
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
-    </Layout>*/
+    </Layout>
   );
 }
