@@ -180,7 +180,7 @@ export default function Home({ allPostsData }) {
       </section>
 
       <section id="fragments" className={`border-b border-[#392F2D]`}>
-        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-[20px]`}>Fragments</h2>
+        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-[20px]`}>Posts</h2>
 
         <PostPreview post={allPostsData[0]} height="300px" />
         <PostPreview post={allPostsData[1]} height="300px" overlap />
