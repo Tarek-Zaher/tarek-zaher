@@ -3,6 +3,7 @@ import { getAllPostIds, getPostData } from '../../lib/posts';
 import Head from 'next/head';
 import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.css';
+import { colorPalette } from '../../lib/colorPalette';
  
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -22,12 +23,15 @@ export async function getStaticPaths() {
 }
  
 export default function Post({ postData }) {
+
+  const postColor = colorPalette[postData.color];
+
   return (
     <Layout>
         <Head>
             {postData.title}
         </Head>
-      <article className='prose prose-md'>
+      <article className={`prose prose-md p-6 rounded-lg`} style={{ backgroundColor: postColor }}>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div className={utilStyles.lightText}>
           <Date dateString={postData.date} />
