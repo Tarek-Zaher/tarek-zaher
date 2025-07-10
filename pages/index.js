@@ -182,9 +182,9 @@ export default function Home({ allPostsData }) {
       <section id="fragments" className={`border-b border-[#392F2D]`}>
         <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-[20px]`}>Fragments</h2>
 
-        <PostPreview post={allPostsData[0]} color="#95B8D1" height="300px" />
-        <PostPreview post={allPostsData[1]} color="#8A9B68" height="300px" overlap />
-        <PostPreview post={allPostsData[2]} color="#D7816A" height="200px" overlap />
+        <PostPreview post={allPostsData[0]} height="300px" />
+        <PostPreview post={allPostsData[1]} height="300px" overlap />
+        <PostPreview post={allPostsData[2]} height="200px" overlap />
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
