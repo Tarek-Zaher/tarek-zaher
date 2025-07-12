@@ -29,7 +29,7 @@ export default function Post({ postData }) {
   const postColor = colorPalette[postData.color];
 
   return (
-    <div>
+    <div style={{ backgroundColor: postColor }}>
       <Head>
         <title>{postData.title}</title>
         <meta name="og:title" content={postData.title} />
