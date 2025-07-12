@@ -33,11 +33,6 @@ export default function Post({ postData }) {
       <Head>
         <title>{postData.title}</title>
         <meta name="og:title" content={postData.title} />
-        <style>{`
-          html, body {
-            background-color: ${postColor};
-          }
-        `}</style>
       </Head>
       <article className={`prose text-[#181818] prose-md p-6 pt-0`}>
         <h5 className={`text-xs pt-3 px-[10px] pb-[10px] text-center uppercase ${latoRegular.className}`}>{postData.type}</h5>

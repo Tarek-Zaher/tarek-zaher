@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Date from '../components/date';
 import { libreBaskervilleBold } from '../components/layout';
 import { libreBaskervilleRegular } from '../components/layout';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import SplitText from 'gsap/SplitText';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -25,6 +25,12 @@ export async function getStaticProps() {
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
 export default function Home({ allPostsData }) {
+
+  useEffect(() => {
+    gsap.set(['html', 'body'], {
+      backgroundColor: '#E8DDB5',
+    });
+  }, []);
 
   const introductionSection = useRef();
 
