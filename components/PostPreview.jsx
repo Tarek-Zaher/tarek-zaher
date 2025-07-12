@@ -3,11 +3,18 @@ import { useRouter } from 'next/router';
 import gsap from 'gsap';
 import { libreBaskervilleRegular, latoRegular } from '../components/layout';
 import { colorPalette } from '../lib/colorPalette';
+import { useEffect } from 'react';
 
 export default function PostPreview({ postData, height, overlap }) {
     const ref = useRef();
     const router = useRouter();
     const postColor = colorPalette[postData.color] || '#95B8D1';
+
+    useEffect(() => {
+        gsap.set(['html', 'body'], {
+            backgroundColor: '#E8DDB5',
+        });
+    }, []);
 
     const handleClick = () => {
         const el = ref.current;
