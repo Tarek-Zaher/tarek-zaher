@@ -122,20 +122,22 @@ export default function Home({ allPostsData }) {
 
   useGSAP(() => {
 
-    SplitText.create(".split", {
-      type: "lines",
-      mask: "lines",
-      autosplit: "true",
-      onSplit(self) {
-        return gsap.from(self.lines, {
-          duration: 2,
-          y: 100,
-          autoAlpha: 0,
-          stagger: 0.05,
-          scrollTrigger: ".circles",
-          onComplete: () => self.revert()
-        });
-      }
+    document.fonts.ready.then(() => {
+      SplitText.create(".split", {
+        type: "lines",
+        mask: "lines",
+        autosplit: "true",
+        onSplit(self) {
+          return gsap.from(self.lines, {
+            duration: 2,
+            y: 100,
+            autoAlpha: 0,
+            stagger: 0.05,
+            scrollTrigger: ".circles",
+            onComplete: () => self.revert()
+          });
+        }
+      });
     });
   });
 
@@ -179,12 +181,12 @@ export default function Home({ allPostsData }) {
 
       </section>
 
-      <section id="fragments" className={`border-b border-[#392F2D]`}>
+      <section id="posts" className={`border-b border-[#392F2D] prose max-w-none`}>
         <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-[20px]`}>Posts</h2>
 
-        <PostPreview post={allPostsData[0]} height="300px" />
-        <PostPreview post={allPostsData[1]} height="300px" overlap />
-        <PostPreview post={allPostsData[2]} height="200px" overlap />
+        <PostPreview postData={allPostsData[0]} height="300px" />
+        <PostPreview postData={allPostsData[1]} height="300px" overlap />
+        <PostPreview postData={allPostsData[2]} height="200px" overlap />
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>

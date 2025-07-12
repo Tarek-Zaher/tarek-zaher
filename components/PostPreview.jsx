@@ -1,11 +1,10 @@
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
 import gsap from 'gsap';
-import { libreBaskervilleBold } from '../components/layout';
-import { libreBaskervilleRegular } from '../components/layout';
+import { libreBaskervilleRegular, latoRegular } from '../components/layout';
 import { colorPalette } from '../lib/colorPalette';
 
-export default function PostPreview({ post, height, overlap }) {
+export default function PostPreview({ postData, height, overlap }) {
   const ref = useRef();
   const router = useRouter();
 
@@ -24,7 +23,12 @@ export default function PostPreview({ post, height, overlap }) {
     clone.style.margin = 0;
 
     document.body.appendChild(clone);
+    const cloneTitle = clone.querySelector('h2');
 
+    gsap.to(cloneTitle, {
+        autoAlpha: 0,
+        duration: 0.3
+    });
     gsap.to(clone, {
       top: 0,
       left: 0,
@@ -34,7 +38,7 @@ export default function PostPreview({ post, height, overlap }) {
       ease: 'power2.inOut',
       duration: 0.6,
       onComplete: () => {
-        router.push(`/posts/${post.id}`);
+        router.push(`/posts/${postData.id}`);
       },
     });
 
@@ -46,17 +50,17 @@ export default function PostPreview({ post, height, overlap }) {
     router.events.on('routeChangeComplete', removeClone);
   };
 
-  const postColor = colorPalette[post.color] || '#95B8D1';
+  const postColor = colorPalette[postData.color] || '#95B8D1';
 
   return (
     <div
       ref={ref}
       onClick={handleClick}
-      className={`cursor-pointer mx-[20px] mb-[20px] ${overlap ? 'mt-[-150px]' : ''} border-0 rounded-[50px] ${libreBaskervilleRegular.className}`}
+      className={`post-preview prose text-[#181818] cursor-pointer mx-[20px] mb-[20px] ${overlap ? 'mt-[-150px]' : ''} border-0 rounded-[50px] ${libreBaskervilleRegular.className}`}
       style={{ backgroundColor: postColor, height }}
     >
-      <h5 className={`text-sm pt-[20px] px-[10px] pb-[10px] text-center`}>{post.type}</h5>
-      <h2 className={`text-center text-[1.5rem] leading-[1.4] my-4 px-8`}>{post.title}</h2>
+      <h5 className={`text-xs text- pt-3 px-[10px] pb-[10px] text-center uppercase ${latoRegular.className}`}>{postData.type}</h5>
+      <h2 className={`text-center text-[1.5rem] leading-[1.4] px-16 mt-2 font-normal`}>{postData.title}</h2>
     </div>
   );
 }
