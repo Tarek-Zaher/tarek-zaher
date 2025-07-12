@@ -34,6 +34,7 @@ export default function PostPreview({ postData, height, overlap }) {
       left: 0,
       width: '100vw',
       height: '100vh',
+      backgroundColor: postData.color,
       borderRadius: 0,
       ease: 'power2.inOut',
       duration: 0.6,
