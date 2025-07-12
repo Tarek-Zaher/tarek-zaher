@@ -46,7 +46,7 @@ export default function Post({ postData }) {
           <path d="M0 0L20 20" stroke="black" strokeWidth="1" />
           <path d="M20 0L0 20" stroke="black" strokeWidth="1" />
         </svg>
-        <h1 className={`text-center text-3xl leading-[1.4] px-8 py-48 font-normal border-b border-[#392F2D] ${libreBaskervilleRegular.className}`}>
+        <h1 className={`text-center text-3xl leading-[1.4] px-8 py-56 font-normal border-b border-[#392F2D] ${libreBaskervilleRegular.className}`}>
           {postData.title}
         </h1>
         <div className={`text-xs grid grid-cols-2 grid-rows-1 justify-between ${libreBaskervilleRegular.className}`}>
