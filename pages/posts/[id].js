@@ -36,22 +36,28 @@ export default function Post({ postData }) {
   useGSAP(() => {
 
     document.fonts.ready.then(() => {
-    SplitText.create(".split", {
-      type: "lines",
-      mask: "lines",
-      autosplit: "true",
-      onSplit(self) {
-        return gsap.from(self.lines, {
-          duration: 0.6,
-          y: 100,
-          autoAlpha: 0,
-          stagger: 0.05,
-          scrollTrigger: ".split",
-          onComplete: () => self.revert()
-        });
-      }
+      SplitText.create(".split", {
+        type: "lines",
+        mask: "lines",
+        autosplit: "true",
+        onSplit(self) {
+          return gsap.from(self.lines, {
+            duration: 0.6,
+            y: 100,
+            autoAlpha: 0,
+            stagger: 0.05,
+            scrollTrigger: ".split",
+            onComplete: () => self.revert()
+          });
+        }
+      });
     });
-    });
+
+    gsap.to('html, body', {
+      backgroundColor: postColor,
+      duration: 0.6,
+      scrollTrigger: "postText"
+    })
 
   });
 
@@ -80,7 +86,7 @@ export default function Post({ postData }) {
           <Date dateString={postData.date} />
           <h5 className={`text-right`}>Tarek Zaher</h5>
         </div>
-        <div className={`py-16 text-[#181818] leading-7 text-base ${libreBaskervilleRegular.className}`} dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div className={`postText py-16 text-[#181818] leading-7 text-base ${libreBaskervilleRegular.className}`} dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </div>
   );
