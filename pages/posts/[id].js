@@ -6,6 +6,9 @@ import Date from '../../components/date';
 import { colorPalette } from '../../lib/colorPalette';
 import { libreBaskervilleRegular, latoRegular } from '../../components/layout';
 import gsap from 'gsap';
+import SplitText from 'gsap/SplitText';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from '@gsap/react';
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -24,9 +27,33 @@ export async function getStaticPaths() {
   };
 }
 
+gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
+
 export default function Post({ postData }) {
   const router = useRouter();
   const postColor = colorPalette[postData.color];
+
+  useGSAP(() => {
+
+    document.fonts.ready.then(() => {
+    SplitText.create(".split", {
+      type: "lines",
+      mask: "lines",
+      autosplit: "true",
+      onSplit(self) {
+        return gsap.from(self.lines, {
+          duration: 0.6,
+          y: 100,
+          autoAlpha: 0,
+          stagger: 0.05,
+          scrollTrigger: ".split",
+          onComplete: () => self.revert()
+        });
+      }
+    });
+    });
+
+  });
 
   return (
     <div style={{ backgroundColor: postColor }}>
@@ -46,7 +73,7 @@ export default function Post({ postData }) {
           <path d="M0 0L20 20" stroke="black" strokeWidth="1" />
           <path d="M20 0L0 20" stroke="black" strokeWidth="1" />
         </svg>
-        <h1 className={`text-center text-3xl leading-[1.4] px-8 py-56 font-normal border-b border-[#392F2D] ${libreBaskervilleRegular.className}`}>
+        <h1 className={`split text-center text-3xl leading-[1.4] px-8 py-56 font-normal border-b border-[#392F2D] ${libreBaskervilleRegular.className}`}>
           {postData.title}
         </h1>
         <div className={`text-xs grid grid-cols-2 grid-rows-1 justify-between ${libreBaskervilleRegular.className}`}>
