@@ -36,97 +36,70 @@ export default function Home({ allPostsData }) {
 
   const { contextSafe } = useGSAP({ scope: introductionSection });
 
-  let nameTl = gsap.timeline();
-
-  let clickCounter = 0;
-  const handleNameClick = contextSafe(() => {
-    clickCounter++;
-
-    gsap.to(".nameBento", {
-      x: 10,
-      y: 5
-    })
-
-    switch (clickCounter) {
-      case 1:
-        nameTl
-          .to(".tarekText", {
-            duration: 0.5,
-            x: 100,
-            autoAlpha: 0,
-          })
-          .set(".tarekText", {
-            display: "none",
-            x: -100
-          })
-          .from(".webDevText", {
-            duration: 0.5,
-            autoAlpha: 0,
-            x: -100
-          })
-        break;
-      case 2:
-        nameTl
-          .to(".webDevText", {
-            duration: 0.5,
-            x: 100,
-            autoAlpha: 0,
-          })
-          .set(".webDevText", {
-            display: "none",
-            x: 0
-          })
-          .from(".writerText", {
-            duration: 0.5,
-            autoAlpha: 0,
-            x: -100
-          })
-        break;
-      case 3:
-        nameTl
-          .to(".writerText", {
-            duration: 0.5,
-            x: 100,
-            autoAlpha: 0,
-          })
-          .set(".writerText", {
-            display: "none",
-            x: 0
-          })
-          .from(".designerText", {
-            duration: 0.5,
-            autoAlpha: 0,
-            x: -100
-          })
-        break;
-      case 4:
-        nameTl
-          .to(".designerText", {
-            duration: 0.5,
-            x: 100,
-            autoAlpha: 0,
-          })
-          .set(".designerText", {
-            display: "none",
-            x: 0
-          })
-          .to(".tarekText", {
-            display: "block",
-            autoAlpha: 1,
-            x: 0
-          })
-          .set(".webDevText, .writerText, .designerText", {
-            display: "block",
-            autoAlpha: 1,
-          })
-        clickCounter = 0;
-        break;
-      default:
-        break;
-    }
-  });
-
   useGSAP(() => {
+
+    let nameTl = gsap.timeline({repeat: -1, defaults: {ease: "power2.inOut"}});
+
+    nameTl
+      .from(".tarekText", {
+        duration: 0.5,
+        autoAlpha: 0,
+        x: -100
+      })
+      .to(".tarekText", {
+        duration: 0.5,
+        x: 100,
+        autoAlpha: 0,
+      }, ">3")
+      .set(".tarekText", {
+        display: "none",
+        x: -100
+      })
+      .from(".webDevText", {
+        duration: 0.5,
+        autoAlpha: 0,
+        x: -100
+      })
+    nameTl
+      .to(".webDevText", {
+        duration: 0.5,
+        x: 100,
+        autoAlpha: 0,
+      }, ">2")
+      .set(".webDevText", {
+        display: "none",
+        x: 0
+      })
+      .from(".writerText", {
+        duration: 0.5,
+        autoAlpha: 0,
+        x: -100
+      })
+    nameTl
+      .to(".writerText", {
+        duration: 0.5,
+        x: 100,
+        autoAlpha: 0,
+      }, ">2")
+      .set(".writerText", {
+        display: "none",
+        x: 0
+      })
+      .from(".designerText", {
+        duration: 0.5,
+        autoAlpha: 0,
+        x: -100
+      })
+    nameTl
+      .to(".designerText", {
+        duration: 0.5,
+        x: 100,
+        autoAlpha: 0,
+      }, ">2")
+      .set(".designerText", {
+        display: "none",
+        x: 0
+      })
 
     document.fonts.ready.then(() => {
       SplitText.create(".split", {
@@ -156,7 +129,7 @@ export default function Home({ allPostsData }) {
       <section ref={introductionSection} className={`border-b border-[#392F2D]`}>
         <div className={`bg-[url(/images/clouds/beautiful_clouds.png)] bg-cover bg-center h-[250px] ${utilStyles.bentoRectangle}`}></div>
 
-        <div onClick={handleNameClick} className={`${utilStyles.nameBento} bg-[#392F2D] h-[250px] overflow-hidden ${utilStyles.bentoRectangle}`}>
+        <div className={`${utilStyles.nameBento} bg-[#392F2D] h-[250px] overflow-hidden ${utilStyles.bentoRectangle}`}>
           <h3 className={`text-white p-8 text-2xl ${libreBaskervilleBold.className}`}>I'm</h3>
           <h3 className={`tarekText text-white text-center text-8xl px-4 my-4 ${libreBaskervilleBold.className} h-auto`}>Tarek</h3>
           <h3 className={`webDevText text-white text-5xl px-8 ${libreBaskervilleBold.className} h-auto`}>a web developer</h3>
