@@ -32,9 +32,7 @@ export default function Home({ allPostsData }) {
     });
   }, []);
 
-  const introductionSection = useRef();
-
-  const { contextSafe } = useGSAP({ scope: introductionSection });
+  const container = useRef();
 
   useGSAP(() => {
 
@@ -118,15 +116,36 @@ export default function Home({ allPostsData }) {
         }
       });
     });
+
+    gsap.from(".postPreview", {
+      duration: 0.6,
+      scrollTrigger: "#posts",
+      y: 50,
+      autoAlpha: 0,
+    })
+    gsap.to(".overlapper", {
+      scrollTrigger: {
+        trigger: "#posts",
+        start: "top center",
+        end: "bottom top",
+        scrub: true,
+        toggleActions: "play none none reverse"
+      },
+      marginTop: "-200px"
+    })
+
+
+
+
   });
 
 
   return (
-    <Layout home>
+    <Layout ref={container} home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section ref={introductionSection} className={`border-b border-[#392F2D]`}>
+      <section className={`border-b border-[#392F2D]`}>
         <div className={`bg-[url(/images/clouds/beautiful_clouds.png)] bg-cover bg-center h-[250px] ${utilStyles.bentoRectangle}`}></div>
 
         <div className={`${utilStyles.nameBento} bg-[#392F2D] h-[250px] overflow-hidden ${utilStyles.bentoRectangle}`}>
@@ -161,7 +180,7 @@ export default function Home({ allPostsData }) {
       </section>
 
       <section id="posts" className={`border-b border-[#392F2D] prose max-w-none`}>
-        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-[20px]`}>Posts</h2>
+        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-[20px] my-8`}>Posts</h2>
 
         <PostPreview postData={allPostsData[0]} height="300px" />
         <PostPreview postData={allPostsData[1]} height="300px" overlap />

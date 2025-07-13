@@ -55,7 +55,7 @@ export default function PostPreview({ postData, height, overlap }) {
         <div
             ref={ref}
             onClick={handleClick}
-            className={`post-preview prose text-[#181818] cursor-pointer mx-[20px] mb-[20px] ${overlap ? 'mt-[-150px]' : ''} border-0 rounded-[50px] ${libreBaskervilleRegular.className}`}
+            className={`postPreview prose text-[#181818] cursor-pointer mx-[20px] mb-[20px] ${overlap ? 'mt-[-150px] overlapper' : ''} border-0 rounded-[50px] ${libreBaskervilleRegular.className}`}
             style={{ backgroundColor: postColor, height }}
         >
             <h5 className={`text-xs text- pt-3 px-[10px] pb-[10px] text-center uppercase ${latoRegular.className}`}>{postData.type}</h5>
