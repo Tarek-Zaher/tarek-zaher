@@ -57,7 +57,10 @@ export default function Post({ postData }) {
     gsap.to('html, body', {
       backgroundColor: postColor,
       duration: 0.6,
-      scrollTrigger: "postText"
+      scrollTrigger: {
+        trigger: "postText",
+        toggleActions: "play reverse none none"
+      }
     })
 
   });
