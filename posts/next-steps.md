@@ -2,7 +2,7 @@
 title: 'Next Steps'
 date: '2025-06-19'
 type: 'Log'
-color: 'green'
+color: 'peach'
 ---
 
 Woohoo! I have my own site to experiment on. There's a lot more I need to do to make it my own. I want to learn [TailwindCSS](tailwindcss.com). Back in the day Bootstrap was my go to but it seems like Tailwind offers much more customization which is what I'm going for. Then for the experiences I want to create I was looking at a few different options. As of now, I've settled on [GSAP](gsap.com) which I couldn't be more excited for. It's the exact kind of cool scrolling and animation experiences I want to create. 
