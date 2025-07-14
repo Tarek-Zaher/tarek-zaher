@@ -59,7 +59,7 @@ export default function Post({ postData }) {
       duration: 0.6,
       scrollTrigger: {
         trigger: "postText",
-        toggleActions: "play reverse none none"
+        toggleActions: "play reset none none"
       }
     })
 
