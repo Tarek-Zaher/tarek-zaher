@@ -196,7 +196,15 @@ export default function Home({ allPostsData }) {
         {numberOfPostPreviews < 4 ?
           <h5 className={`text-center pb-8 text-sm ${libreBaskervilleRegular.className}`} onClick={() => setNumberOfPostPreviews((prev) => prev + (allPostsData.length - prev))}>Show All</h5>
           :
-          <h5 className={`text-center pb-8 text-sm ${libreBaskervilleRegular.className}`} onClick={() => setNumberOfPostPreviews((prev) => 3)}>Show Less</h5>
+          <h5 className={`text-center pb-8 text-sm ${libreBaskervilleRegular.className}`} onClick={
+            () => { setNumberOfPostPreviews(3);
+
+            document.getElementById("posts")?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }}
+          >Show Less</h5>
         }
       </section>
 

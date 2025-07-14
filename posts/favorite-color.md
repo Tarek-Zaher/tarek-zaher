@@ -24,12 +24,14 @@ Similarly, if you want to try and let your little man speak through words or thr
 Here's what my little man told me today when I invited him up to my brain to speak:
 
 A mountain is a slow moving wave    
-the ocean is a giant engine     
+every ocean is one giant engine     
 powered by the warmth of the sun   
-which has waited a very long time   
-and travelled very far  
-to just now    
-and now        
-and now        
-without notice  
-reach you  
+which has come from very far away   
+(the warmth)       
+,waited a very long time         
+(the warmth)    
+and just now    
+without notice        
+has washed upon the shore    
+of the back of your neck    
+in spring   
