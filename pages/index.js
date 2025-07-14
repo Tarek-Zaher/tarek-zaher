@@ -25,14 +25,35 @@ export async function getStaticProps() {
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
 export default function Home({ allPostsData }) {
+  let [numberOfPostPreviews, setNumberOfPostPreviews] = useState(3);
+  const container = useRef();
 
-  useEffect(() => {
+  useGSAP(() => {
     gsap.set(['html', 'body'], {
       backgroundColor: '#E8DDB5',
     });
-  }, []);
+  });
 
-  const container = useRef();
+  useGSAP(() => {
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+    gsap.from(".postPreview", {
+      duration: 0.6,
+      y: 50,
+      autoAlpha: 0,
+      stagger: 0.1,
+    });
+    gsap.to(".overlapper", {
+      scrollTrigger: {
+        trigger: "#posts",
+        start: "top center",
+        end: "bottom top",
+        scrub: true,
+        toggleActions: "play none none reverse"
+      },
+      marginTop: "-210px"
+    });
+  }, {dependencies: [numberOfPostPreviews]});
 
   useGSAP(() => {
 
@@ -117,29 +138,8 @@ export default function Home({ allPostsData }) {
       });
     });
 
-    gsap.from(".postPreview", {
-      duration: 0.6,
-      scrollTrigger: "#posts",
-      y: 50,
-      autoAlpha: 0,
-    })
-    gsap.to(".overlapper", {
-      scrollTrigger: {
-        trigger: "#posts",
-        start: "top center",
-        end: "bottom top",
-        scrub: true,
-        toggleActions: "play none none reverse"
-      },
-      marginTop: "-210px"
-    })
-
-
-
 
   });
-
-  let [numberOfPostPreviews, setNumberOfPostPreviews] = useState(3);
 
   return (
     <Layout ref={container} home>
