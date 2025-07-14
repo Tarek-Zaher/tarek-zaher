@@ -9,6 +9,7 @@ import gsap from 'gsap';
 import SplitText from 'gsap/SplitText';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
+import PostPreview from '../../components/PostPreview';
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);

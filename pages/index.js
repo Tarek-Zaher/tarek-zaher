@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Date from '../components/date';
 import { libreBaskervilleBold } from '../components/layout';
 import { libreBaskervilleRegular } from '../components/layout';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import SplitText from 'gsap/SplitText';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -36,7 +36,7 @@ export default function Home({ allPostsData }) {
 
   useGSAP(() => {
 
-    let nameTl = gsap.timeline({repeat: -1, defaults: {ease: "power2.inOut"}});
+    let nameTl = gsap.timeline({ repeat: -1, defaults: { ease: "power2.inOut" } });
 
     nameTl
       .from(".tarekText", {
@@ -131,7 +131,7 @@ export default function Home({ allPostsData }) {
         scrub: true,
         toggleActions: "play none none reverse"
       },
-      marginTop: "-200px"
+      marginTop: "-210px"
     })
 
 
@@ -139,6 +139,7 @@ export default function Home({ allPostsData }) {
 
   });
 
+  let [numberOfPostPreviews, setNumberOfPostPreviews] = useState(3);
 
   return (
     <Layout ref={container} home>
@@ -179,29 +180,46 @@ export default function Home({ allPostsData }) {
 
       </section>
 
-      <section id="posts" className={`border-b border-[#392F2D] prose max-w-none`}>
+      <section id="posts" className={`border-b border-[#392F2D] prose max-w-none h-auto`}>
         <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-[20px] my-8`}>Posts</h2>
 
-        <PostPreview postData={allPostsData[0]} height="300px" />
-        <PostPreview postData={allPostsData[1]} height="300px" overlap />
-        <PostPreview postData={allPostsData[2]} height="200px" overlap />
+        {allPostsData.slice(0, numberOfPostPreviews).map((postData, index, arr) => (
+          <PostPreview
+            key={postData.id}
+            postData={postData}
+            height={index === arr.length - 1 ? "200px" : "300px"}
+            overlap={index > 0}
+            zIndex={index + 1}
+          />
+        ))}
+
+        {numberOfPostPreviews < 4 ?
+          <h5 className={`text-center pb-8 text-sm ${libreBaskervilleRegular.className}`} onClick={() => setNumberOfPostPreviews((prev) => prev + (allPostsData.length - prev))}>Show All</h5>
+          :
+          <h5 className={`text-center pb-8 text-sm ${libreBaskervilleRegular.className}`} onClick={() => setNumberOfPostPreviews((prev) => 3)}>Show Less</h5>
+        }
       </section>
 
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-[20px]`}>Fragments</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.slice(0, 3).map(({ id, date, title, type }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                {type}
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <footer class="py-32">
+        <h5 className={`text-5xl text-center pb-10 ${libreBaskervilleRegular.className}`}>Thank you!</h5>
+
+        <div className="circles flex items-center justify-center">
+          <div className="grid grid-cols-2 grid-rows-2 gap-3">
+            <svg width="80" height="80" viewBox="0 0 80 80" className="block">
+              <path d="M40,0 A40,40 0 1,0 40,80 A40,40 0 1,0 40,0" fill="#95B8D1" />
+            </svg>
+            <svg width="80" height="80" viewBox="0 0 80 80" className="block">
+              <path d="M40,0 A40,40 0 1,0 40,80 A40,40 0 1,0 40,0" fill="#8A9B68" />
+            </svg>
+            <svg width="80" height="80" viewBox="0 0 80 80" className="block">
+              <path d="M40,0 A40,40 0 1,0 40,80 A40,40 0 1,0 40,0" fill="#D7816A" />
+            </svg>
+            <svg width="80" height="80" viewBox="0 0 80 80" className="block">
+              <path d="M40,0 A40,40 0 1,0 40,80 A40,40 0 1,0 40,0" fill="#726675" />
+            </svg>
+          </div>
+        </div>
+      </footer>
     </Layout>
   );
 }
