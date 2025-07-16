@@ -71,7 +71,7 @@ export default function Post({ postData }) {
         <title>{postData.title}</title>
         <meta name="og:title" content={postData.title} />
       </Head>
-      <article className={`prose text-[#181818] prose-md p-6 pt-0`}>
+      <article className={`prose text-[#181818] prose-md p-6 pt-0 text-center mx-auto`}>
         <h5 className={`text-xs pt-3 px-[10px] pb-[10px] text-center uppercase ${latoRegular.className}`}>{postData.type}</h5>
         <svg
           width="20"
@@ -87,7 +87,7 @@ export default function Post({ postData }) {
           {postData.title}
         </h1>
         <div className={`text-xs grid grid-cols-2 grid-rows-1 justify-between ${libreBaskervilleRegular.className}`}>
-          <Date dateString={postData.date} />
+          <Date className="text-left" dateString={postData.date} />
           <h5 className={`text-right`}>Tarek Zaher</h5>
         </div>
         <div className={`postText py-16 text-[#181818] leading-7 text-base ${libreBaskervilleRegular.className}`} dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />

@@ -53,7 +53,7 @@ export default function Home({ allPostsData }) {
       },
       marginTop: "-210px"
     });
-  }, {dependencies: [numberOfPostPreviews]});
+  }, { dependencies: [numberOfPostPreviews] });
 
   useGSAP(() => {
 
@@ -146,37 +146,40 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={`border-b border-[#392F2D]`}>
-        <div className={`bg-[url(/images/clouds/beautiful_clouds.png)] bg-cover bg-center h-[250px] ${utilStyles.bentoRectangle}`}></div>
+      <section id="introduction" className={`border-b border-[#392F2D] lg:grid lg:grid-flow-row-dense lg:grid-cols-8 lg:grid-rows-8 lg:h-[95vh] lg:gap-0`}>
 
-        <div className={`${utilStyles.nameBento} bg-[#392F2D] h-[250px] overflow-hidden ${utilStyles.bentoRectangle}`}>
+        <div className={`bg-[url(/images/clouds/beautiful_clouds.png)] m-[20px] bg-cover bg-center h-[250px] lg:h-auto lg:col-span-4 lg:row-span-3 ${utilStyles.bentoRectangle}`}></div>
+
+        <div className={`${utilStyles.nameBento} m-[20px] bg-[#392F2D] h-[250px] overflow-hidden lg:h-auto lg:col-span-4 lg:row-span-3 ${utilStyles.bentoRectangle}`}>
           <h3 className={`text-white p-8 text-2xl ${libreBaskervilleBold.className}`}>I'm</h3>
-          <h3 className={`tarekText text-white text-center text-8xl px-4 my-4 ${libreBaskervilleBold.className} h-auto`}>Tarek</h3>
-          <h3 className={`webDevText text-white text-5xl px-8 ${libreBaskervilleBold.className} h-auto`}>a web developer</h3>
-          <h3 className={`writerText text-white text-5xl px-8 mb-8 mt-12 ${libreBaskervilleBold.className} h-auto`}>a writer</h3>
-          <h3 className={`designerText text-white text-5xl px-8 mb-8 mt-12 ${libreBaskervilleBold.className} h-auto`}>a designer</h3>
+          <h3 className={`tarekText text-white text-center text-8xl lg:text-10xl px-4 my-4 lg:my-0 ${libreBaskervilleBold.className} h-auto`}>Tarek</h3>
+          <h3 className={`webDevText text-white text-5xl px-8 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a web developer</h3>
+          <h3 className={`writerText text-white text-5xl px-8 mb-8 lg:mb-10 mt-12 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a writer</h3>
+          <h3 className={`designerText text-white text-5xl px-8 mb-8 lg:mb-10 mt-12 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a designer</h3>
         </div>
 
-        <h2 className={`passionStatement split m-[20px] px-4 pt-4 pb-0 text-black text-xl ${libreBaskervilleRegular.className}`}>I'm passionate about creating engaging web experiences and appreciating the beauty of the world around us.</h2>
+        <div class="lg:col-span-5 lg:row-span-4">
+          <h2 className={`passionStatement split m-[20px] lg:mt-0 px-4 pt-4 pb-0 text-black text-xl lg:text-3xl ${libreBaskervilleBold.className}`}>I'm passionate about creating engaging web experiences and appreciating the beauty of the world around us.</h2>
 
-        <div className="circles flex items-center justify-center my-8">
-          <div className="grid grid-cols-4 grid-rows-1 gap-1">
-            <svg width="80" height="80" viewBox="0 0 80 80" className="block">
-              <path d="M40,0 A40,40 0 1,0 40,80 A40,40 0 1,0 40,0" fill="#95B8D1" />
-            </svg>
-            <svg width="80" height="80" viewBox="0 0 80 80" className="block">
-              <path d="M40,0 A40,40 0 1,0 40,80 A40,40 0 1,0 40,0" fill="#8A9B68" />
-            </svg>
-            <svg width="80" height="80" viewBox="0 0 80 80" className="block">
-              <path d="M40,0 A40,40 0 1,0 40,80 A40,40 0 1,0 40,0" fill="#D7816A" />
-            </svg>
-            <svg width="80" height="80" viewBox="0 0 80 80" className="block">
-              <path d="M40,0 A40,40 0 1,0 40,80 A40,40 0 1,0 40,0" fill="#726675" />
-            </svg>
+          <div className="circles flex items-center justify-center my-16">
+            <div className="grid grid-cols-4 gap-1 lg:gap-4 w-full max-w-lg">
+              <svg id="circle1" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid meet" className="w-full aspect-square">
+                <circle cx="40" cy="40" r="40" fill="#95B8D1" />
+              </svg>
+              <svg id="circle2" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid meet" className="w-full aspect-square">
+                <circle cx="40" cy="40" r="40" fill="#8A9B68" />
+              </svg>
+              <svg id="circle3" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid meet" className="w-full aspect-square">
+                <circle cx="40" cy="40" r="40" fill="#D7816A" />
+              </svg>
+              <svg id="circle4" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid meet" className="w-full aspect-square">
+                <circle cx="40" cy="40" r="40" fill="#726675" />
+              </svg>
+            </div>
           </div>
         </div>
 
-        <div className={`bg-[url(/images/tarek.png)] bg-cover bg-center h-[500px] ${utilStyles.bentoRectangle}`}></div>
+        <div className={`bg-[url(/images/tarek.png)] m-[20px] bg-cover bg-center h-[500px] lg:h-auto lg:col-span-3 lg:row-span-5 ${utilStyles.bentoRectangle}`}></div>
 
       </section>
 
@@ -194,16 +197,17 @@ export default function Home({ allPostsData }) {
         ))}
 
         {numberOfPostPreviews < 4 ?
-          <h5 className={`text-center pb-8 text-sm ${libreBaskervilleRegular.className}`} onClick={() => setNumberOfPostPreviews((prev) => prev + (allPostsData.length - prev))}>Show All</h5>
+          <h5 className={`text-center pb-8 text-sm cursor-pointer ${libreBaskervilleRegular.className}`} onClick={() => setNumberOfPostPreviews((prev) => prev + (allPostsData.length - prev))}>Show All</h5>
           :
-          <h5 className={`text-center pb-8 text-sm ${libreBaskervilleRegular.className}`} onClick={
-            () => { setNumberOfPostPreviews(3);
+          <h5 className={`text-center pb-8 text-sm cursor-pointer ${libreBaskervilleRegular.className}`} onClick={
+            () => {
+              setNumberOfPostPreviews(3);
 
-            document.getElementById("posts")?.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }}
+              document.getElementById("posts")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
           >Show Less</h5>
         }
       </section>
