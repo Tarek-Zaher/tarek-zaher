@@ -90,7 +90,7 @@ export default function Post({ postData }) {
           <Date className="text-left" dateString={postData.date} />
           <h5 className={`text-right`}>Tarek Zaher</h5>
         </div>
-        <div className={`postText py-16 text-[#181818] leading-7 text-base ${libreBaskervilleRegular.className}`} dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div className={`postText py-16 text-[#181818] leading-7 text-base text-left ${libreBaskervilleRegular.className}`} dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </div>
   );
