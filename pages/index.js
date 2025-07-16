@@ -163,7 +163,7 @@ export default function Home({ allPostsData }) {
 
           <div className="circles flex items-center justify-center my-8 lg:my-16">
             <div className="grid grid-cols-4 gap-1 lg:gap-4 w-[85%] max-w-lg">
-              <svg id="circle1" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid meet" className="w-[full] aspect-square">
+              <svg id="circle1" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid meet" className="w-full aspect-square">
                 <circle cx="40" cy="40" r="40" fill="#95B8D1" />
               </svg>
               <svg id="circle2" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid meet" className="w-full aspect-square">
@@ -184,7 +184,7 @@ export default function Home({ allPostsData }) {
       </section>
 
       <section id="posts" className={`border-b border-[#392F2D] prose max-w-none h-auto`}>
-        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-[20px] my-8`}>Posts</h2>
+        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-[20px]`}>Posts</h2>
 
         {allPostsData.slice(0, numberOfPostPreviews).map((postData, index, arr) => (
           <PostPreview
