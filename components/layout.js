@@ -3,13 +3,29 @@ import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import { Libre_Baskerville, Lato } from 'next/font/google';
+
+export const libreBaskervilleBold = Libre_Baskerville({
+  subsets: ['latin'],
+  weight: '700',
+});
+
+export const libreBaskervilleRegular = Libre_Baskerville({
+  subsets: ['latin'],
+  weight: '400',
+});
+
+export const latoRegular = Lato({
+  subsets: ['latin'],
+  weight: '400',
+});
 
 const name = 'Tarek Zaher';
-export const siteTitle = 'Tarek Zaher\'s Personal Website';
+export const siteTitle = 'Tarek Zaher';
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -23,38 +39,8 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="/images/tarek-zaher-cloud-icon.png" />
       </Head>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/Tarek-profile-pic.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt=""
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/Tarek-profile-pic.jpg"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt=""
-              />
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
-                {name}
-              </Link>
-            </h2>
-          </>
-        )}
+      <header className={`${styles.header} ${libreBaskervilleRegular.className}`}>
+        <Link href="/">tarek zaher</Link>
       </header>
       <main>{children}</main>
       {!home && (

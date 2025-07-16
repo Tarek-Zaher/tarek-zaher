@@ -1,6 +1,8 @@
 ---
 title: "The Warmth of the Sun"
 date: "2025-06-24"
+type: "Log"
+color: "yellow"
 ---
 
 My dear friend Elliot is starting a print magazine which will be named something like *The Barton Springs Reader* for a local readership here in Austin. He's genuinely probably the most creative, driven, well-rounded person I know and so when he asked me to put together a contribution to the magazine I was immediately on board.

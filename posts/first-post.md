@@ -1,6 +1,8 @@
 ---
 title: 'My First Post'
 date: '2025-06-16'
+type: 'Log'
+color: 'tangerine'
 ---
  
 This is my first post on this site! I built it using the Next.js tutorial [here](nextjs.org/learn/pages-router). I like the idea of having full creative control over the site. I have a few ideas for what I want this site to be. 
