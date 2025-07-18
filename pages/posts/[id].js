@@ -59,7 +59,6 @@ export default function Post({ postData }) {
       duration: 0.6,
       scrollTrigger: {
         trigger: "postText",
-        toggleActions: "play reset none none"
       }
     })
 
