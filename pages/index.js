@@ -51,7 +51,7 @@ export default function Home({ allPostsData }) {
         scrub: true,
         toggleActions: "play none none reverse"
       },
-      marginTop: "-210px"
+      marginTop: "-250px"
     });
   }, { dependencies: [numberOfPostPreviews] });
 
@@ -190,7 +190,7 @@ export default function Home({ allPostsData }) {
           <PostPreview
             key={postData.id}
             postData={postData}
-            height={index === arr.length - 1 ? "200px" : "300px"}
+            height={index === arr.length - 1 ? "225px" : "300px"}
             overlap={index > 0}
             zIndex={index + 1}
           />
@@ -212,13 +212,13 @@ export default function Home({ allPostsData }) {
         }
       </section>
 
-      <section id="sketches" className={`border-b border-[#392F2D] max-w-none h-auto`}>
-        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-8`}>Sketches</h2>
-
-        <iframe class="w-[400px] h-[542px] m-8" src="https://editor.p5js.org/Tarek-Zaher/full/KXK97_BTS"></iframe>
-        <iframe class="w[400px] h-[442px] m-8" src="https://editor.p5js.org/Tarek-Zaher/full/L3ovyshcM"></iframe>
-      </section>
-
+{//     <section id="sketches" className={`border-b border-[#392F2D] max-w-none h-auto`}>
+//        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-8`}>Sketches</h2>
+//
+//        <iframe class="w-[400px] h-[542px] m-8" src="https://editor.p5js.org/Tarek-Zaher/full/KXK97_BTS"></iframe>
+//        <iframe class="w[400px] h-[442px] m-8" src="https://editor.p5js.org/Tarek-Zaher/full/L3ovyshcM"></iframe>
+//      </section>
+}
       <footer class="py-32">
         <h5 className={`text-5xl text-center pb-10 ${libreBaskervilleRegular.className}`}>Thank you!</h5>
 
