@@ -184,7 +184,7 @@ export default function Home({ allPostsData }) {
       </section>
 
       <section id="posts" className={`border-b border-[#392F2D] prose max-w-none h-auto`}>
-        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-[20px]`}>Posts</h2>
+        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-8`}>Posts</h2>
 
         {allPostsData.slice(0, numberOfPostPreviews).map((postData, index, arr) => (
           <PostPreview
@@ -210,6 +210,13 @@ export default function Home({ allPostsData }) {
             }}
           >Show Less</h5>
         }
+      </section>
+
+      <section id="sketches" className={`border-b border-[#392F2D] max-w-none h-auto`}>
+        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-8`}>Sketches</h2>
+
+        <iframe class="w-[400px] h-[542px] m-8" src="https://editor.p5js.org/Tarek-Zaher/full/KXK97_BTS"></iframe>
+        <iframe class="w[400px] h-[442px] m-8" src="https://editor.p5js.org/Tarek-Zaher/full/L3ovyshcM"></iframe>
       </section>
 
       <footer class="py-32">
