@@ -129,6 +129,7 @@ export default function HelperHomePage({ totalKilled, childrenKilled, womenKille
                             year: 'numeric',
                             month: 'long',
                             day: 'numeric',
+                            timeZone: 'UTC',
                         })}
                     </p>
                 ))}
