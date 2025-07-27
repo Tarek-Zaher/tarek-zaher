@@ -58,9 +58,9 @@ export default function HelperHomePage() {
             <section class="">
                 <h1 className={`${headerFont.className} text-7xl px-4 pb-8`}>{today}</h1>
                 <p className={`${bodyFont.className} px-4 text-base`}>As of today, The Gaza Health Ministry reports over <span className={`${bodyFontBold.className} text-[#CE1126]`}>59,000</span> Palestinians have been killed in Gaza. It has been <span className={`${bodyFontBold.className} text-[#CE1126]`}>{getTimeSinceSufficientAid()} days</span> since sufficient humanitarian aid has been allowed into Gaza. </p>
-                <p className={`${bodyFont.className} px-4 pt-2 text-base`}><span className={`${bodyFontBold.className} text-[#007A3D]`}>0</span> donations have been initiated today.</p>
-                <p className={`${bodyFont.className} px-4 pt-2 text-base`}><span className={`${bodyFontBold.className} text-[#007A3D]`}>0</span> representatives have been contacted today.</p>
-                <p className={`${bodyFont.className} px-4 pt-2 text-base`}><span className={`${bodyFontBold.className} text-[#007A3D]`}>0</span> social media posts have been made today.</p>
+                <p className={`${bodyFont.className} px-4 pt-2 text-base`}><span className={`${bodyFontBold.className} text-[#007A3D]`}>0</span> donations have been initiated.</p>
+                <p className={`${bodyFont.className} px-4 pt-2 text-base`}><span className={`${bodyFontBold.className} text-[#007A3D]`}>0</span> representatives have been contacted.</p>
+                <p className={`${bodyFont.className} px-4 pt-2 text-base`}><span className={`${bodyFontBold.className} text-[#007A3D]`}>0</span> social media posts have been made.</p>
 
                 <div class="m-4 bg-black text-white rounded-md p-4">
                     <h2 className={`${headerFont.className} text-5xl p-2`}>Donate</h2>
