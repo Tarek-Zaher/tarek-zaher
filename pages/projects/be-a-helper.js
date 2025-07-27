@@ -1,7 +1,7 @@
 import { Cormorant, Lexend } from 'next/font/google';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import Link from 'next/link';
+
 
 const headerFont = Cormorant({
     subsets: ['latin'],
@@ -18,7 +18,26 @@ const bodyFontBold = Lexend({
     weight: '700',
 })
 
-export default function HelperHomePage() {
+export async function getServerSideProps() {
+  const rawSummaryData = await fetch('https://data.techforpalestine.org/api/v3/summary.json');
+  const summaryData = await rawSummaryData.json();
+
+  const totalKilled = summaryData.gaza.killed.total;
+  const childrenKilled = summaryData.gaza.killed.children;
+  const womenKilled = summaryData.gaza.killed.women;
+  const injured = summaryData.gaza.injured.total;
+
+  return {
+    props: {
+      totalKilled,
+      childrenKilled,
+      womenKilled,
+      injured,
+    },
+  };
+}
+
+export default function HelperHomePage({ totalKilled, childrenKilled, womenKilled, injured }) {
 
     useGSAP(() => {
         gsap.set(['html', 'body'], {
@@ -57,7 +76,7 @@ export default function HelperHomePage() {
 
             <section class="">
                 <h1 className={`${headerFont.className} text-7xl px-4 pb-8`}>{today}</h1>
-                <p className={`${bodyFont.className} px-4 text-base`}>As of today, The Gaza Health Ministry reports over <span className={`${bodyFontBold.className} text-[#CE1126]`}>59,000</span> Palestinians have been killed in Gaza. It has been <span className={`${bodyFontBold.className} text-[#CE1126]`}>{getTimeSinceSufficientAid()} days</span> since sufficient humanitarian aid has been allowed into Gaza. </p>
+                <p className={`${bodyFont.className} px-4 text-base`}>As of today, The Gaza Health Ministry reports <span className={`${bodyFontBold.className} text-[#CE1126]`}>{injured.toLocaleString()}</span> Palestinians have been injured and <span className={`${bodyFontBold.className} text-[#CE1126]`}>{totalKilled.toLocaleString()}</span> have been killed in Gaza. Of those deaths, <span className={`${bodyFontBold.className} text-[#CE1126]`}>{womenKilled.toLocaleString()}</span> were women and <span className={`${bodyFontBold.className} text-[#CE1126]`}>{childrenKilled.toLocaleString()}</span> were chilren. It has been <span className={`${bodyFontBold.className} text-[#CE1126]`}>{getTimeSinceSufficientAid()} days</span> since sufficient humanitarian aid has been allowed into Gaza. <a href="https://data.techforpalestine.org/docs/summary/">[source]</a></p>
                 <p className={`${bodyFont.className} px-4 pt-2 text-base`}><span className={`${bodyFontBold.className} text-[#007A3D]`}>0</span> donations have been initiated.</p>
                 <p className={`${bodyFont.className} px-4 pt-2 text-base`}><span className={`${bodyFontBold.className} text-[#007A3D]`}>0</span> representatives have been contacted.</p>
                 <p className={`${bodyFont.className} px-4 pt-2 text-base`}><span className={`${bodyFontBold.className} text-[#007A3D]`}>0</span> social media posts have been made.</p>

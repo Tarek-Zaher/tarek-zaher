@@ -36,7 +36,7 @@ Okay I finished the design in Figma, moving on to coding a rough draft.
 
 Okay awesome, I've got a page up and running [here](https://tarekzaher.com/projects/be-a-helper). Things I need to add in no particular order:
 
-* add dynamic variable for death toll (see documentation linked above)
+✅ add dynamic variable for death toll (see documentation linked above)
 * add dynamic variables for donations initated, representatives called, and social media posts made
 * add Spread Awareness Section beneath Lobby
 * Add section where casualties whose birthdays were today are displayed
