@@ -15,4 +15,15 @@ The following passage from Albert Camus' *The Plague* captures this insight (or 
 
 I'm willing to concede that thinking in this way is a psychological aberration one should try one's best to avoid. All the same, doing so does not get rid of it inside of me and any attempt to do so feels like an attempt to care less about others which a part of me cannot seem to swallow. Here's the truth: I am proud of my guilt. It's some kind symbol of superiority and yet at the same time some kind of evil stand-in for actual action. I can go about my day to day life a little easier knowing that it's there. Yes, I am living in American luxury, making purchases that are morally indefensible, each day a graveyard of wasted time, but at least I am not fully enjoying anything I do. At least, in the back of my mind, I am always judging others and myself. Is a moral framework wherein the amount of negative judgement is proportional to someone's happiness worthy of anything? Isn't the whole point for people to suffer less and be happy more? What's the alternative? Doing whatever we can to ignore others' suffering and enjoying ourselves? Is any middle ground possible? 
 
->Once they were on the pier they saw the sea spread out before them, a gently heaving expanse of deep-piled velvet, supple and sleek as a creature of the wild. They sat down on a boulder facing the open. Slowly the waters rose and sank, and with their tranquil breathing sudden oily glints formed and flickered over the surface in a haze of broken lights. Before them the darkness stretched out into infinity. Rieux could feel under his hand the gnarled, weather-worn visage of the rocks, and a strange happiness possessed him. Turning to Tarrou, he caught a glimpse of his friend's face of the same happiness, a happiness that forgot nothing, not even murder.
+### *July 26th*
+
+Okay so I've been thinking about this and I've decided I want to do something that helps me be less of a hypocrite. Obviously Palestine is the biggest example of mothers and children suffering in our world today. My idea is a site that helps you track our daily efforts to ease this suffering. There could be:
+
+1. Donate to a charity
+2. Call your senator
+3. Spread Awareness
+4. Any other ideas?
+
+And then I could use [this API](https://data.techforpalestine.org/docs/killed-in-gaza/) to display some information and visualize some data about the suffering that has occurred and which is currently occurring. I'm visualizing, names of people who have been killed whose birthday was today. Number of days since food/water, etc. 
+
+I'm gonna draw up a quick design on figma and go from there.
