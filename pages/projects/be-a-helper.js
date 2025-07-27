@@ -52,7 +52,7 @@ export default function HelperHomePage() {
             </section>
 
             <section class="py-8 px-4">
-                <p className={`${bodyFont.className} px-2 text-center`}>“When I was a boy and I would see scary things in the news, my mother would say to me, "Look for the helpers. You will always find people who are helping.”<br></br><br></br>-Mr. Rogers</p>
+                <p className={`${bodyFont.className} px-2 text-center`}>“When I was a boy and I would see scary things in the news, my mother would say to me, 'Look for the helpers. You will always find people who are helping.'"<br></br><br></br>-Mr. Rogers</p>
             </section>
 
             <section class="">
