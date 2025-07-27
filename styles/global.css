@@ -26,13 +26,18 @@ body {
   box-sizing: border-box;
 }
  
-a {
+/*a {
   color: #3D72A4;
   text-decoration: none;
 }
  
 a:hover {
   text-decoration: underline;
+}*/
+
+a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
  
 img {
