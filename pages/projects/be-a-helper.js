@@ -1,6 +1,8 @@
 import { Cormorant, Lexend } from 'next/font/google';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import Layout from '../../components/layout';
+
 
 
 const headerFont = Cormorant({
@@ -76,26 +78,19 @@ export default function HelperHomePage({ totalKilled, childrenKilled, womenKille
     };
 
     return (
-        <div>
-            <nav class="border-b">
-                <h2 className={`${headerFont.className} text-4xl text-center p-4`}>Be a Helper</h2>
-            </nav>
+        <Layout>
 
-            <section className={`bg-[#007A3D] py-8`}>
-                <h3 className={`${headerFont.className} text-6xl pb-8 px-4 text-white text-left`}>Every Day Palestenians are Suffering</h3>
-                <p className={`${bodyFont.className} text-xl text-white text-left px-4`}>For those who want to do more than just feel guilty, Be a Helper is a daily snapshot of all the different ways you can help suffering women and children right now.</p>
+            <section className={`bg-[#007A3D] py-16`}>
+                <p className={`${bodyFont.className} px-2 text-center text-white text-xl`}>“When I was a boy and I would see scary things in the news, my mother would say to me, 'Look for the helpers. You will always find people who are helping.'"<br></br><br></br>-Mr. Rogers</p>
             </section>
 
-            <section class="py-8 px-4">
-                <p className={`${bodyFont.className} px-2 text-center`}>“When I was a boy and I would see scary things in the news, my mother would say to me, 'Look for the helpers. You will always find people who are helping.'"<br></br><br></br>-Mr. Rogers</p>
-            </section>
-
-            <section>
+            <section class="py-8">
                 <h1 className={`${headerFont.className} text-7xl px-4 pb-8`}>{today}</h1>
-                <p className={`${bodyFont.className} px-4 text-base`}>As of today, The Gaza Health Ministry reports <span className={`${bodyFontBold.className} text-[#CE1126]`}>{injured.toLocaleString()}</span> Palestinians have been injured in Gaza. <span className={`${bodyFontBold.className} text-[#CE1126]`}>{totalKilled.toLocaleString()}</span> have been killed. Of those deaths, <span className={`${bodyFontBold.className} text-[#CE1126]`}>{womenKilled.toLocaleString()}</span> were women and <span className={`${bodyFontBold.className} text-[#CE1126]`}>{childrenKilled.toLocaleString()}</span> were chilren. It has been <span className={`${bodyFontBold.className} text-[#CE1126]`}>{getTimeSinceSufficientAid()} days</span> since sufficient humanitarian aid has been allowed into Gaza. <a href="https://data.techforpalestine.org/docs/summary/">[source]</a></p>
-                <p className={`${bodyFont.className} px-4 pt-2 text-base`}><span className={`${bodyFontBold.className} text-[#007A3D]`}>0</span> donations have been initiated.</p>
-                <p className={`${bodyFont.className} px-4 pt-2 text-base`}><span className={`${bodyFontBold.className} text-[#007A3D]`}>0</span> representatives have been contacted.</p>
-                <p className={`${bodyFont.className} px-4 pt-2 text-base`}><span className={`${bodyFontBold.className} text-[#007A3D]`}>0</span> social media posts have been made.</p>
+                <p className={`${bodyFont.className} px-4 text-base`}>
+                    As of today, The Gaza Health Ministry reports <span className={`${bodyFontBold.className} text-[#CE1126]`}>{injured.toLocaleString()}</span> Palestinians have been injured in Gaza. 
+                    <span className={`${bodyFontBold.className} text-[#CE1126]`}> {totalKilled.toLocaleString()}</span> have been killed.
+                    Of those deaths, <span className={`${bodyFontBold.className} text-[#CE1126]`}>{womenKilled.toLocaleString()}</span> were women and <span className={`${bodyFontBold.className} text-[#CE1126]`}>{childrenKilled.toLocaleString()}</span> were chilren.
+                    It has been <span className={`${bodyFontBold.className} text-[#CE1126]`}>{getTimeSinceSufficientAid()} days</span> since sufficient humanitarian aid has been allowed into Gaza. <a href="https://data.techforpalestine.org/docs/summary/">[source]</a></p>
 
                 <div class="m-4 bg-black text-white rounded-md p-4">
                     <h2 className={`${headerFont.className} text-5xl p-2`}>Donate</h2>
@@ -120,7 +115,7 @@ export default function HelperHomePage({ totalKilled, childrenKilled, womenKille
             </section>
 
             <section class="py-8 bg-[#CE1126]">
-                <h1 className={`${headerFont.className} text-7xl px-4 pb-8 text-center text-white`}>Casualties</h1>
+                <h1 className={`${headerFont.className} text-7xl px-4 pb-8 text-center text-white`}>Lost Birthdays</h1>
                 {bornToday.map((person, index) => (
                     <p key={index} className={`${bodyFont.className} text-white text-center pb-4`}>
                         {person.en_name}<br></br>
@@ -134,6 +129,6 @@ export default function HelperHomePage({ totalKilled, childrenKilled, womenKille
                     </p>
                 ))}
             </section>
-        </div>
+        </Layout>
     );
 }

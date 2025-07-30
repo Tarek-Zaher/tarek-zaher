@@ -39,4 +39,8 @@ Okay awesome, I've got a page up and running [here](https://tarekzaher.com/proje
 ✅ add dynamic variable for death toll (see documentation linked above)
 * add dynamic variables for donations initated, representatives called, and social media posts made
 * add Spread Awareness Section beneath Lobby
-* Add section where casualties whose birthdays were today are displayed
+✅ Add section where casualties whose birthdays were today are displayed
+
+### *July 30th 12:38PM*
+
+Okay I've been away for a few days and decided on a more realistic approach here. It's more of a tracking page than a call to action page. I don't have much reach on this site so that seems to make sense as an approach. I'm happy with it though! I've also been thinking of ways I can save money in my own life to have more to donate. I started meal prepping and I actually really love cooking, so it feels like adding something to my life as opposed to sacrificing anything. Having done this I feel a lot better about the guilt and maybe have thoughts about guilt vs. compassion, the latter being the healthier more beautiful version but that's for another day.
