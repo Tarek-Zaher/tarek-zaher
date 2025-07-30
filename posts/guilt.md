@@ -38,7 +38,7 @@ Okay awesome, I've got a page up and running [here](https://tarekzaher.com/proje
 
 ✅ add dynamic variable for death toll (see documentation linked above)
 * add dynamic variables for donations initated, representatives called, and social media posts made
-* add Spread Awareness Section beneath Lobby
+* add Spread Awareness Section beneath Lobby    
 ✅ Add section where casualties whose birthdays were today are displayed
 
 ### *July 30th 12:38PM*
