@@ -4,6 +4,9 @@ date: "2025-07-18"
 type: "Essay"
 color: "blue"
 ---
+
+*This is a submission for my dear friend Elliot's upcoming magazine. The theme was "The Desire to Create"*
+
 Finally! After weeks of going to sleep dreaming about this moment, after countless tutorials and guides online, after tasting the temptation of the satisfaction of completion on the tip of my tongue, at last, I am finished. In spring it's a cloud painting I've started over 8 times. In winter it's a short story about a monkey I can never get right. All summer and fall are spent on the hacky idea of building artistic websites, whatever that means. I pick up and drop creative projects like a drug addict looking for that first high, but it never comes (if it ever did at all). Here's the thing. Creativity, for me, isn't a beautiful outlet of self-expression or a divine commune with the mystery of the world. I would prefer to just read nonfiction and learn about the real world if I'm being honest. But if I don't create, I will die. I create so I can survive long enough to do what really matters. 
 
 Why do I value cold hard facts over the beauty that comes from creative expression? I think it's because I live in the cold, hard real world. I can't afford one of those immersive VR headsets so for now I'm stuck here, and so are you. So partly, creativity is a distraction from what's real. Sure, you may argue that a well-written novel or play actually offers us deep psychological insight into the human condition and other things which are all very real, plus it's much more engaging. To that I say, what hubris! What ego! To think you or anyone else can capture the essence of reality. I will grant you it is more engaging, because it is entertainment, pure and simple. All creatives are nothing more than sleezy reality TV producers, twisting and cutting reality until they can present the most entertaining angle to the world as if it is the unbiased truth. 
