@@ -262,8 +262,8 @@ const scenes = [
             { question: 'This was around the time we started to become obsessed with a certain Korean cartoon character.', answer: 'cartoon dog in rags' },
             { question: 'We went to the ___________ ____!', answer: 'Renaissance Fair' },
         ],
-        forgottenMemories: 4,
-        memories: 2,
+        forgottenMemories: 3,
+        memories: 3,
     },
     {
         background: '/images/anniversary/memoryPuzzle3/renfair1.jpeg',
