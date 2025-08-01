@@ -79,9 +79,9 @@ export default function MemoryPuzzleScene({ title, date, images, prompts, forgot
     const allSolved = solved.every(Boolean);
 
     return (
-        <div className={`grid grid-cols-8 lg:grid-rows-1 bg-[#537A5A] h-[100vh] ${videoGameFont.className}`}>
+        <div className={`grid grid-cols-1 grid-rows-3 lg: grid-cols-8 lg:grid-rows-1 bg-[#537A5A] lg:h-[100vh] w-[100%] ${videoGameFont.className}`}>
             {/*Memories Section*/}
-            <div className={`bg-[#343941] text-center py-4 text-sm tracking-widest`}>
+            <div className={`bg-[#343941] col-span-full lg:col-span-1 row-start-2 lg:row-start-1 text-center py-4 text-sm tracking-widest`}>
                 <p className={`text-white mb-4`}>Memories</p>
                 {[...Array(memories)].map((_, i) => (
                     <div key={i} className="my-4">
@@ -95,7 +95,7 @@ export default function MemoryPuzzleScene({ title, date, images, prompts, forgot
                 ))}
             </div>
             {/*Puzzle Section*/}
-            <div ref={puzzleRef} className={`col-span-6 grid grid-cols-22 grid-rows-6 gap-4`}>
+            <div ref={puzzleRef} className={`w-full col-span-full row-start-1 lg:col-span-6 lg:grid grid-cols-22 grid-rows-6 gap-4`}>
                 {/*Title & Date*/}
                 <div class="col-span-22">
                     <h1 class="text-white text-center text-4xl pt-4 pb-2 titleText">∆ß#~R5t N3x`K!gZ</h1>
@@ -118,21 +118,21 @@ export default function MemoryPuzzleScene({ title, date, images, prompts, forgot
                 <div className={`row-span-2 col-span-20 col-start-2 promptBox border border-[#EEF4ED] rounded-t-lg border-b-0 ${solved.every(Boolean) ? 'bg-[#537A5A]' : 'bg-[#2F323A]'}`}>
                     <form key={currentPrompt} onSubmit={(e) => handleSubmit(e, currentPrompt)} className="mb-4 p-4">
                         <p className="mb-4 text-white text-xs text-center px-6">{prompt.question}</p>
-                        <div className="flex gap-2 w-[70%] mx-auto">
+                        <div className="flex gap-2 lg:w-[70%] mx-auto">
                             <input
                                 ref={inputRef}
                                 type="text"
                                 value={inputs[currentPrompt]}
                                 onChange={(e) => handleChange(currentPrompt, e.target.value)}
-                                className="flex-1 p-2 text-[#EEF4ED] text-center rounded border-b border-[#EEF4ED]"
+                                className="flex-1 w-[70%] lg:w-full p-2 text-[#EEF4ED] text-center rounded border-b border-[#EEF4ED]"
                                 placeholder="Your answer..."
                             />
                             {solved[4] ?
-                                <button onClick={onNext} className={`bg-[#537A5A] px-4 py-3 text-white rounded cursor-pointer text-xs`}>
+                                <button onClick={onNext} className={`bg-[#537A5A] lg:px-4 py-3 text-white rounded cursor-pointer text-xs`}>
                                     Next
                                 </button>
                                 :
-                                <button type="submit" className="cursor-pointer bg-[#8DA9C4] px-4 py-2 rounded">
+                                <button type="submit" className="cursor-pointer bg-[#8DA9C4] lg:px-4 py-2 rounded">
                                     →
                                 </button>
                             }
@@ -143,7 +143,7 @@ export default function MemoryPuzzleScene({ title, date, images, prompts, forgot
             </div>
 
             {/*Hints Section*/}
-            <div className={`bg-[#343941] text-center py-4 text-sm tracking-widest`}>
+            <div className={`bg-[#343941] row-start-3 lg:row-start-1 text-center py-4 text-sm tracking-widest`}>
                 <p className="text-white mb-4"></p>
             </div>
         </div>
