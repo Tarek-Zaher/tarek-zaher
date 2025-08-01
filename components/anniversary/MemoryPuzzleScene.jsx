@@ -29,7 +29,7 @@ export default function MemoryPuzzleScene({ title, date, images, prompts, forgot
         const correct = prompts[index].answer.toLowerCase();
         const guess = inputs[index].trim().toLowerCase();
 
-        if (guess === correct) {
+        if (guess === correct || guess === "skip") {
             const newSolved = [...solved];
             newSolved[index] = true;
             setSolved(newSolved);
