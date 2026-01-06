@@ -2,7 +2,7 @@
 title: "A Fresh Look"
 date: "2025-07-16"
 type: "Log"
-color: "peach"
+color: "green"
 ---
 
 Woohoo! My full site redesign is complete! It took way longer than I thought it would, but I'm very happy with the results. For reference, here is what it looked like before:
