@@ -30,8 +30,8 @@ function swipeToMove(dx: number, dy: number, threshold: number = 30): Move | nul
 	// Determine primary direction
 	if (Math.abs(dx) > Math.abs(dy)) {
 		// Horizontal swipe
-		if (dx > 0) return { dx: 2, dz: 0 } // Swipe right = move right
-		else return { dx: -2, dz: 0 } // Swipe left = move left
+		if (dx > 0) return { dx: -2, dz: 0 } // Swipe right = move right
+		else return { dx: 2, dz: 0 } // Swipe left = move left
 	} else {
 		// Vertical swipe
 		if (dy < 0) return { dx: 0, dz: 2 } // Swipe up = move forward
@@ -178,6 +178,8 @@ function Scene() {
 			if (e.touches.length === 1) {
 				const touch = e.touches[0]
 				touchStartRef.current = { x: touch.clientX, y: touch.clientY }
+				// Prevent default to stop scrolling
+				e.preventDefault()
 			}
 		}
 
@@ -200,13 +202,13 @@ function Scene() {
 		}
 
 		const onTouchMove = (e: TouchEvent) => {
-			// Prevent scrolling during swipe gestures
+			// Always prevent scrolling during swipe gestures
 			if (touchStartRef.current && e.touches.length === 1) {
 				e.preventDefault()
 			}
 		}
 
-		window.addEventListener('touchstart', onTouchStart, { passive: true })
+		window.addEventListener('touchstart', onTouchStart, { passive: false } as any)
 		window.addEventListener('touchmove', onTouchMove, { passive: false } as any)
 		window.addEventListener('touchend', onTouchEnd, { passive: false } as any)
 
@@ -272,7 +274,7 @@ function Scene() {
 
 export default function GamePage() {
 	return (
-		<div style={{ width: '100vw', height: '100vh' }}>
+		<div style={{ width: '100vw', height: '100vh', touchAction: 'none' }}>
 			<Canvas shadows dpr={[1, 2]}>
 				<Scene />
 			</Canvas>
