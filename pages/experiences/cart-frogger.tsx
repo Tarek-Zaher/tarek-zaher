@@ -1,23 +1,21 @@
 'use client'
 
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Environment } from '@react-three/drei'
+import { Environment, useGLTF } from '@react-three/drei'
 import gsap from 'gsap'
 import * as THREE from 'three'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
-import { useGLTF } from '@react-three/drei'
-
-
-const TILE = 1
+const TILE = 1.5
+const speed = 1
 
 type Move = { dx: number; dz: number }
 
 function keyToMove(key: string): Move | null {
-	if (key === 'ArrowUp' || key === 'w' || key === 'W') return { dx: 0, dz: 2 }
-	if (key === 'ArrowDown' || key === 's' || key === 'S') return { dx: 0, dz: -2 }
-	if (key === 'ArrowLeft' || key === 'a' || key === 'A') return { dx: 2, dz: 0 }
-	if (key === 'ArrowRight' || key === 'd' || key === 'D') return { dx: -2, dz: 0 }
+	if (key === 'ArrowUp' || key === 'w' || key === 'W') return { dx: 0, dz: speed }
+	if (key === 'ArrowDown' || key === 's' || key === 'S') return { dx: 0, dz: -speed }
+	if (key === 'ArrowLeft' || key === 'a' || key === 'A') return { dx: speed, dz: 0 }
+	if (key === 'ArrowRight' || key === 'd' || key === 'D') return { dx: -speed, dz: 0 }
 	return null
 }
 
@@ -30,12 +28,12 @@ function swipeToMove(dx: number, dy: number, threshold: number = 30): Move | nul
 	// Determine primary direction
 	if (Math.abs(dx) > Math.abs(dy)) {
 		// Horizontal swipe
-		if (dx > 0) return { dx: -2, dz: 0 } // Swipe right = move right
-		else return { dx: 2, dz: 0 } // Swipe left = move left
+		if (dx > 0) return { dx: -speed, dz: 0 } 
+		else return { dx: speed, dz: 0 } 
 	} else {
 		// Vertical swipe
-		if (dy < 0) return { dx: 0, dz: 2 } // Swipe up = move forward
-		else return { dx: 0, dz: -2 } // Swipe down = move backward
+		if (dy < 0) return { dx: 0, dz: speed } 
+		else return { dx: 0, dz: -speed } 
 	}
 }
 
@@ -104,7 +102,7 @@ function Scene() {
 	const movingRef = useRef(false)
 	const moveQueueRef = useRef<Move | null>(null)
 	const animationRef = useRef<gsap.core.Tween | null>(null)
-	const touchStartRef = useRef<{ x: number; y: number } | null>(null)
+	const touchStartRef = useRef<{ x: number; y: number; time: number; hasMoved: boolean } | null>(null)
 
 	const { camera } = useThree()
 	const lookAtRef = useRef(new THREE.Vector3(0, 0, 4))
@@ -177,7 +175,12 @@ function Scene() {
 		const onTouchStart = (e: TouchEvent) => {
 			if (e.touches.length === 1) {
 				const touch = e.touches[0]
-				touchStartRef.current = { x: touch.clientX, y: touch.clientY }
+				touchStartRef.current = { 
+					x: touch.clientX, 
+					y: touch.clientY,
+					time: Date.now(),
+					hasMoved: false
+				}
 				// Prevent default to stop scrolling
 				e.preventDefault()
 			}
@@ -190,11 +193,25 @@ function Scene() {
 				const touch = e.changedTouches[0]
 				const dx = touch.clientX - touchStartRef.current.x
 				const dy = touch.clientY - touchStartRef.current.y
+				const touchDuration = Date.now() - touchStartRef.current.time
+				const distance = Math.sqrt(dx * dx + dy * dy)
+				
+				// Tap detection: quick touch (< 300ms) with minimal movement (< 10px)
+				const isTap = !touchStartRef.current.hasMoved && 
+				              touchDuration < 300 && 
+				              distance < 10
 
-				const m = swipeToMove(dx, dy)
-				if (m) {
+				if (isTap) {
+					// Tap: move forward
 					e.preventDefault()
-					tryMove(m)
+					tryMove({ dx: 0, dz: speed })
+				} else {
+					// Swipe: use existing swipe logic
+					const m = swipeToMove(dx, dy)
+					if (m) {
+						e.preventDefault()
+						tryMove(m)
+					}
 				}
 			}
 
@@ -205,6 +222,17 @@ function Scene() {
 			// Always prevent scrolling during swipe gestures
 			if (touchStartRef.current && e.touches.length === 1) {
 				e.preventDefault()
+				// Mark that movement occurred
+				if (!touchStartRef.current.hasMoved) {
+					const touch = e.touches[0]
+					const dx = touch.clientX - touchStartRef.current.x
+					const dy = touch.clientY - touchStartRef.current.y
+					const distance = Math.sqrt(dx * dx + dy * dy)
+					// If moved more than 5px, it's not a tap
+					if (distance > 5) {
+						touchStartRef.current.hasMoved = true
+					}
+				}
 			}
 		}
 
@@ -232,7 +260,6 @@ function Scene() {
 	useFrame(() => {
 		if (!camera) return
 
-		// Crossy Road style: camera behind and above, looking ahead, angled to the right
 		const desiredLook = new THREE.Vector3(cartPos[0], 0.5, cartPos[2] + 3)
 		lookAtRef.current.lerp(desiredLook, 0.08)
 
