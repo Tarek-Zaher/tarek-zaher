@@ -492,7 +492,7 @@ function Scene({ onCouponCollected }: { onCouponCollected: () => void }) {
 	useFrame(() => {
 		if (!camera) return
 
-		const desiredLook = new THREE.Vector3(cartPos[0], 0.5, cartPos[2])
+		const desiredLook = new THREE.Vector3(cartPos[0], 0.5, cartPos[2] + 4)
 		lookAtRef.current.lerp(desiredLook, 0.08)
 
 		const desiredCamPos = new THREE.Vector3(cartPos[0] - 4, 12, cartPos[2] - 16)
