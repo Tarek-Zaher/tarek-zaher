@@ -3,8 +3,6 @@ import Layout, { siteTitle } from '../components/layout';
 import PostPreview from '../components/PostPreview.jsx'
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
-import Link from 'next/link';
-import Date from '../components/date';
 import { libreBaskervilleBold } from '../components/layout';
 import { libreBaskervilleRegular } from '../components/layout';
 import { useRef, useEffect, useState } from 'react';
@@ -60,62 +58,62 @@ export default function Home({ allPostsData }) {
     let nameTl = gsap.timeline({ repeat: -1, defaults: { ease: "power2.inOut" } });
 
     nameTl
-      .from(".tarekText", {
+      .from(".stage1Text", {
         duration: 0.5,
         autoAlpha: 0,
         x: -100
       })
-      .to(".tarekText", {
+      .to(".stage1Text", {
         duration: 0.5,
         x: 100,
         autoAlpha: 0,
       }, ">3")
-      .set(".tarekText", {
+      .set(".stage1Text", {
         display: "none",
         x: -100
       })
-      .from(".webDevText", {
+      .from(".stage2Text", {
         duration: 0.5,
         autoAlpha: 0,
         x: -100
       })
     nameTl
-      .to(".webDevText", {
+      .to(".stage2Text", {
         duration: 0.5,
         x: 100,
         autoAlpha: 0,
       }, ">2")
-      .set(".webDevText", {
-        display: "none",
-        x: 0
-      })
-      .from(".writerText", {
-        duration: 0.5,
-        autoAlpha: 0,
-        x: -100
-      })
-    nameTl
-      .to(".writerText", {
-        duration: 0.5,
-        x: 100,
-        autoAlpha: 0,
-      }, ">2")
-      .set(".writerText", {
+      .set(".stage2Text", {
         display: "none",
         x: 0
       })
-      .from(".designerText", {
+      .from(".stage3Text", {
         duration: 0.5,
         autoAlpha: 0,
         x: -100
       })
     nameTl
-      .to(".designerText", {
+      .to(".stage3Text", {
         duration: 0.5,
         x: 100,
         autoAlpha: 0,
       }, ">2")
-      .set(".designerText", {
+      .set(".stage3Text", {
+        display: "none",
+        x: 0
+      })
+      .from(".stage4Text", {
+        duration: 0.5,
+        autoAlpha: 0,
+        x: -100
+      })
+    nameTl
+      .to(".stage4Text", {
+        duration: 0.5,
+        x: 100,
+        autoAlpha: 0,
+      }, ">2")
+      .set(".stage4Text", {
         display: "none",
         x: 0
       })
@@ -152,10 +150,10 @@ export default function Home({ allPostsData }) {
 
         <div className={`${utilStyles.nameBento} m-[20px] bg-[#392F2D] h-[250px] overflow-hidden lg:h-auto lg:col-span-4 lg:row-span-3 ${utilStyles.bentoRectangle}`}>
           <h3 className={`text-white p-8 text-2xl ${libreBaskervilleBold.className}`}>I'm</h3>
-          <h3 className={`tarekText text-white text-center text-8xl lg:text-10xl px-4 my-4 lg:my-0 ${libreBaskervilleBold.className} h-auto`}>Tarek</h3>
-          <h3 className={`webDevText text-white text-5xl px-8 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a web developer</h3>
-          <h3 className={`writerText text-white text-5xl px-8 mb-8 lg:mb-10 mt-12 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a writer</h3>
-          <h3 className={`designerText text-white text-5xl px-8 mb-8 lg:mb-10 mt-12 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a designer</h3>
+          <h3 className={`stage1Text text-white text-center text-8xl lg:text-10xl px-4 my-4 lg:my-0 ${libreBaskervilleBold.className} h-auto`}>Tarek</h3>
+          <h3 className={`stage2Text text-white text-5xl px-8 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a web developer</h3>
+          <h3 className={`stage3Text text-white text-5xl px-8 mb-8 lg:mb-10 mt-12 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a WordPress expert</h3>
+          <h3 className={`stage4Text text-white text-5xl px-8 mb-8 lg:mb-10 mt-12 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a cloud watcher</h3>
         </div>
 
         <div class="lg:col-span-5 lg:row-span-4">
