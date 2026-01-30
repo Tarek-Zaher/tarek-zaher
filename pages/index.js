@@ -28,7 +28,7 @@ export default function Home({ allPostsData }) {
 
   useGSAP(() => {
     gsap.set(['html', 'body'], {
-      backgroundColor: '#E8DDB5',
+      backgroundColor: '#d3c5b2',
     });
   });
 
@@ -148,16 +148,16 @@ export default function Home({ allPostsData }) {
 
         <div className={`bg-[url(/images/clouds/beautiful_clouds.png)] m-[20px] bg-cover bg-center h-[250px] lg:h-auto lg:col-span-4 lg:row-span-3 ${utilStyles.bentoRectangle}`}></div>
 
-        <div className={`${utilStyles.nameBento} m-[20px] bg-[#392F2D] h-[250px] overflow-hidden lg:h-auto lg:col-span-4 lg:row-span-3 ${utilStyles.bentoRectangle}`}>
-          <h3 className={`text-white p-8 text-2xl ${libreBaskervilleBold.className}`}>I'm</h3>
-          <h3 className={`stage1Text text-white text-center text-8xl lg:text-10xl px-4 my-4 lg:my-0 ${libreBaskervilleBold.className} h-auto`}>Tarek</h3>
-          <h3 className={`stage2Text text-white text-5xl px-8 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a web developer</h3>
-          <h3 className={`stage3Text text-white text-5xl px-8 mb-8 lg:mb-10 mt-12 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a WordPress expert</h3>
-          <h3 className={`stage4Text text-white text-5xl px-8 mb-8 lg:mb-10 mt-12 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a cloud watcher</h3>
+        <div className={`${utilStyles.nameBento} m-[20px] bg-[#392F2D] text-sky-50 h-[250px] overflow-hidden lg:h-auto lg:col-span-4 lg:row-span-3 ${utilStyles.bentoRectangle}`}>
+          <h3 className={`p-8 text-2xl ${libreBaskervilleBold.className}`}>I'm</h3>
+          <h3 className={`stage1Text text-8xl lg:text-10xl px-8 my-4 lg:my-0 ${libreBaskervilleBold.className} h-auto`}>Tarek</h3>
+          <h3 className={`stage2Text text-5xl px-8 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a web developer</h3>
+          <h3 className={`stage3Text text-5xl px-8 mb-8 lg:mb-10 mt-12 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a WordPress expert</h3>
+          <h3 className={`stage4Text text-5xl px-8 mb-8 lg:mb-10 mt-12 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a cloud watcher</h3>
         </div>
 
         <div class="lg:col-span-5 lg:row-span-4">
-          <h2 className={`passionStatement split m-[20px] lg:mt-0 px-4 pt-4 pb-0 text-black text-xl lg:text-3xl ${libreBaskervilleBold.className}`}>I'm passionate about creating engaging web experiences and appreciating the beauty of the world around us.</h2>
+          <h2 className={`passionStatement split m-[20px] lg:mt-0 px-4 pt-4 pb-0 text-neutral-800 text-xl lg:text-3xl ${libreBaskervilleBold.className}`}>I'm passionate about creating engaging web experiences and appreciating the beauty of the world around us.</h2>
 
           <div className="circles flex items-center justify-center my-8 lg:my-16">
             <div className="grid grid-cols-4 gap-1 lg:gap-4 w-[85%] max-w-lg">
@@ -177,7 +177,7 @@ export default function Home({ allPostsData }) {
           </div>
         </div>
 
-        <div className={`bg-[url(/images/tarek.png)] m-[20px] bg-cover bg-center h-[500px] lg:h-auto lg:col-span-3 lg:row-span-5 ${utilStyles.bentoRectangle}`}></div>
+        <div className={`bg-[url(/images/tarek.jpg)] m-[20px] bg-cover bg-center h-[500px] lg:h-auto lg:col-span-3 lg:row-span-5 ${utilStyles.bentoRectangle}`}></div>
 
       </section>
 
