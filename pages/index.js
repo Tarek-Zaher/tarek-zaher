@@ -28,7 +28,7 @@ export default function Home({ allPostsData }) {
 
   useGSAP(() => {
     gsap.set(['html', 'body'], {
-      backgroundColor: '#d3c5b2',
+      backgroundColor: '#E8DDB5',
     });
   });
 
