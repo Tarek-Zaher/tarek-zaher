@@ -1,0 +1,108 @@
+{
+    "Books": [
+        {
+            "bookNumber": "One",
+            "description": "Explores the nature of happiness (eudaimonia) as the ultimate goal of human existence.",
+            "AverageWPM": 84,
+            "Accuracy": 98,
+            "Sections": [
+                {
+                    "sectionNumber": "1",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "2",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "3",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "4",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "5",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "6",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "7",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "8",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "9",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "10",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "11",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "12",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "13",
+                    "completed": false
+                }
+            ]
+        },
+        {
+            "bookNumber": "Two",
+            "description": "Exploration of the two types of virtue: intellectual and moral.",
+            "AverageWPM": 62,
+            "Accuracy": 95,
+            "Sections": [
+                {
+                    "sectionNumber": "1",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "2",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "3",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "4",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "5",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "6",
+                    "completed": false 
+                },
+                {
+                    "sectionNumber": "7",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "8",
+                    "completed": false
+                },
+                {
+                    "sectionNumber": "9",
+                    "completed": false
+                }
+            ]
+        }
+    ]
+}

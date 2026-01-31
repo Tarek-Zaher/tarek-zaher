@@ -28,7 +28,7 @@ export default function Home({ allPostsData }) {
 
   useGSAP(() => {
     gsap.set(['html', 'body'], {
-      backgroundColor: '#E8DDB5',
+      backgroundColor: 'var(--primary-bg-color)',
     });
   });
 
@@ -162,13 +162,13 @@ export default function Home({ allPostsData }) {
           <div className="circles flex items-center justify-center my-8 lg:my-16">
             <div className="grid grid-cols-4 gap-1 lg:gap-4 w-[85%] max-w-lg">
               <svg id="circle1" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid meet" className="w-full aspect-square">
-                <circle cx="40" cy="40" r="40" fill="#95B8D1" />
+                <circle cx="40" cy="40" r="40" fill="var(--blue-bg-color)" />
               </svg>
               <svg id="circle2" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid meet" className="w-full aspect-square">
-                <circle cx="40" cy="40" r="40" fill="#8A9B68" />
+                <circle cx="40" cy="40" r="40" fill="var(--green-bg-color)" />
               </svg>
               <svg id="circle3" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid meet" className="w-full aspect-square">
-                <circle cx="40" cy="40" r="40" fill="#D7816A" />
+                <circle cx="40" cy="40" r="40" fill="var(--accent-bg-color)" />
               </svg>
               <svg id="circle4" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid meet" className="w-full aspect-square">
                 <circle cx="40" cy="40" r="40" fill="#726675" />

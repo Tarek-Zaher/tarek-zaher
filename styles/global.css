@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+:root {
+  --primary-bg-color: #E8DDB5;
+  --dark-bg-color: #392F2D;
+  --blue-bg-color: #95B8D1;
+  --green-bg-color: #8A9B68;
+  --accent-bg-color: #D7816A;
+}
+
 html,
 body {
   padding: 0;
@@ -19,7 +27,7 @@ body {
     sans-serif;
   line-height: 1.6;
   font-size: 18px;
-  background-color: #E8DDB5;
+  background-color: var(--primary-bg-color);
 }
  
 * {
