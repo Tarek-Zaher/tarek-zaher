@@ -1,6 +1,6 @@
 'use client';
 
-import { libreBaskervilleRegular } from '../../../components/layout';
+import { libreBaskervilleBold, libreBaskervilleRegular } from '../../../components/layout';
 import BookBento from "../../../components/aristotle-typer/BookBento";
 import nicomacheanEthics from "./data/nicomachean-ethics.json";
 import { useState, useEffect } from 'react';
@@ -31,8 +31,8 @@ export default function AristotleTyper() {
 
     return (
         <div className="lg:mx-64">
-            <h1 className={`${libreBaskervilleRegular.className} md:text-6xl text-3xl text-center pt-12 px-8`}>Nicomachean Ethics</h1>
-            <p className={`${libreBaskervilleRegular.className} text-center py-4 px-8`}>by Aristotle</p>
+            <h1 className={`${libreBaskervilleBold.className} md:text-6xl text-3xl text-stone-800 text-center pt-12 px-8`}>Nicomachean Ethics</h1>
+            <p className={`${libreBaskervilleRegular.className} text-center text-stone-800 py-4 px-8`}>by Aristotle</p>
 
             {nicomacheanEthics.Books.map((book) => {
                 const stats = bookStats[book.bookNumber];
