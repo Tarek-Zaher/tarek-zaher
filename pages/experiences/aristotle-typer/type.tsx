@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import nicomacheanEthics from './data/nicomachean-ethics.json';
 import { useState } from 'react';
 import { House } from 'lucide-react';
-import { saveProgress } from './data/storage';
+import { saveProgress } from './lib/storage';
 
 
 export default function Type() {
