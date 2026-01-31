@@ -19,9 +19,12 @@ export default function SectionCounter( {bookNumber, sendSection, selectedSectio
                         <button 
                             onClick={() => sendSection(section.sectionNumber)} 
                             key={section.sectionNumber} 
-                            className={`text-center rounded-full 
+                            className={`text-center rounded-full size-12 text-xl
                                 ${section.sectionNumber === selectedSection ? 'bg-[var(--accent-bg-color)]' : completed ? 'bg-[var(--green-bg-color)]' : 'bg-[var(--blue-bg-color)]'}
-                                hover:cursor-pointer hover:bg-[var(--accent-bg-color)] p-2 size-12 text-xl`}
+                                hover:cursor-pointer hover:bg-[var(--accent-bg-color)] p-2 
+                                ${section.sectionNumber === selectedSection ? 'shadow-[0_1px_0_0_var(--dark-bg-color)] translate-y-[3px]' : 
+                                    completed ? 'shadow-[0_1px_0_0_var(--dark-bg-color)] translate-y-[3px]' : 
+                                    'shadow-[1px_4px_0_0_var(--dark-bg-color)] active:shadow-[0_1px_0_0_var(--dark-bg-color)] active:translate-y-[3px] transition-all'}`}
                         >
                             {section.sectionNumber}
                         </button>

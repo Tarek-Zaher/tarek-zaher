@@ -171,7 +171,7 @@ export default function Home({ allPostsData }) {
                 <circle cx="40" cy="40" r="40" fill="var(--accent-bg-color)" />
               </svg>
               <svg id="circle4" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid meet" className="w-full aspect-square">
-                <circle cx="40" cy="40" r="40" fill="#726675" />
+                <circle cx="40" cy="40" r="40" fill="var(--purple-bg-color)" />
               </svg>
             </div>
           </div>
