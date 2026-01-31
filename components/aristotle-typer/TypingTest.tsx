@@ -12,6 +12,34 @@ export default function TypingTest({ referenceText, onComplete }: TypingTestProp
     const [startTime, setStartTime] = useState<number | null>(null);
     const inputRef = useRef<HTMLTextAreaElement>(null);
 
+    useEffect(() => {
+        setTimeout(() => {
+          inputRef.current?.focus();
+        }, 100);
+    }, []);
+
+    useEffect(() => {
+        if (userInput.length === 1 && startTime === null) {
+        setStartTime(Date.now());
+        }
+    }, [userInput, startTime]);
+
+    useEffect(() => {
+        if (userInput.length === referenceText.length && startTime) {
+        const timeElapsed = (Date.now() - startTime) / 1000 / 60; // minutes
+        const words = referenceText.split(' ').length;
+        const wpm = Math.round(words / timeElapsed);
+        
+
+        let errors = 0;
+        for (let i = 0; i < referenceText.length; i++) {
+            if (userInput[i] !== referenceText[i]) errors++;
+        }
+        const accuracy = Math.round(((referenceText.length - errors) / referenceText.length) * 100);
+        
+        onComplete(wpm, accuracy);
+        }
+    }, [userInput, referenceText, startTime, onComplete]);
 
     const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const value = e.target.value;
@@ -20,40 +48,42 @@ export default function TypingTest({ referenceText, onComplete }: TypingTestProp
         }
       };
 
-    return (
-        <div className="typing-test-container">
-            <div className="text-display">
+      return (
+        <div 
+          className="relative w-full"
+          onClick={() => inputRef.current?.focus()}
+        >
+
+          <div className="text-xl leading-relaxed font-mono whitespace-pre-wrap p-6 rounded-lg cursor-text">
             {referenceText.split('').map((char, index) => {
-                let className = 'char-default'; // gray/low opacity
-                
-                if (index < userInput.length) {
-                // User has typed this character
-                if (userInput[index] === char) {
-                    className = 'char-correct'; // full opacity
-                } else {
-                    className = 'char-incorrect'; // red
-                }
-                }
-                
-                if (index === userInput.length) {
-                className += ' char-cursor';
-                }
-                
-                return (
-                <span key={index} className={className}>
-                    {char}
+              const isTyped = index < userInput.length;
+              const isCorrect = isTyped && userInput[index] === char;
+              const isIncorrect = isTyped && userInput[index] !== char;
+              const isCursor = index === userInput.length;
+              
+              return (
+                <span
+                  key={index}
+                  className={`
+                    ${!isTyped ? 'opacity-50' : ''}
+                    ${isCorrect ? 'opacity-100' : ''}
+                    ${isIncorrect ? 'text-red-500' : ''}
+                    ${isCursor ? 'border-l-4 border-blue-700 animate-pulse' : ''}
+                  `}
+                >
+                  {char}
                 </span>
-                );
+              );
             })}
-            </div>
+          </div>
     
-            <textarea
+          <textarea
             ref={inputRef}
             value={userInput}
             onChange={handleInput}
             className="sr-only"
             autoFocus
-            />
-      </div>
-    )
+          />
+        </div>
+      );
 }
