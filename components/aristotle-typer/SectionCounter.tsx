@@ -2,7 +2,7 @@
 
 import { libreBaskervilleRegular } from '../layout';
 import nicomacheanEthics from '../../pages/experiences/aristotle-typer/data/nicomachean-ethics.json';
-import { isSectionCompleted } from '../../pages/experiences/aristotle-typer/lib/storage';
+import { isSectionCompleted } from '../../lib/storage';
 import { useState, useEffect } from 'react';
 
 export default function SectionCounter( {bookNumber, sendSection, selectedSection} ) {

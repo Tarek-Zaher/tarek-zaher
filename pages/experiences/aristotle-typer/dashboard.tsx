@@ -4,7 +4,7 @@ import { libreBaskervilleRegular } from '../../../components/layout';
 import BookBento from "../../../components/aristotle-typer/BookBento";
 import nicomacheanEthics from "./data/nicomachean-ethics.json";
 import { useState, useEffect } from 'react';
-import { getSectionStats } from './lib/storage';
+import { getSectionStats } from '../../../lib/storage';
 
 export default function AristotleTyper() {
     const [mounted, setMounted] = useState(false);
