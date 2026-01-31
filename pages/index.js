@@ -152,8 +152,8 @@ export default function Home({ allPostsData }) {
           <h3 className={`p-8 text-2xl ${libreBaskervilleBold.className}`}>I'm</h3>
           <h3 className={`stage1Text text-8xl lg:text-10xl px-8 my-4 lg:my-0 ${libreBaskervilleBold.className} h-auto`}>Tarek</h3>
           <h3 className={`stage2Text text-5xl px-8 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a web developer</h3>
-          <h3 className={`stage3Text text-5xl px-8 mb-8 lg:mb-10 mt-12 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a WordPress expert</h3>
-          <h3 className={`stage4Text text-5xl px-8 mb-8 lg:mb-10 mt-12 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a cloud watcher</h3>
+          <h3 className={`stage3Text text-5xl px-8 lg:mb-10 mt-12 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a WordPress expert</h3>
+          <h3 className={`stage4Text text-5xl px-8 lg:mb-10 mt-12 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a cloud watcher</h3>
         </div>
 
         <div class="lg:col-span-5 lg:row-span-4">
