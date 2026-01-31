@@ -13,8 +13,8 @@ export default function BookBento( {bookNumber, description, averageWpm, accurac
     };
 
     return (
-        <div className="shadow-xl rounded-lg">  
-            <div key={bookNumber} className="lg:grid lg:grid-cols-4 lg:grid-rows-4 gap-4 rounded-lg p-4 mb-4">
+        <div className="shadow-xl rounded-lg mb-16">  
+            <div key={bookNumber} className="lg:grid lg:grid-cols-4 lg:grid-rows-4 gap-4 rounded-lg p-4">
 
                 <div className="lg:col-span-3 lg:row-span-3 bg-[var(--dark-bg-color)] rounded-xl px-8 py-8 flex flex-wrap">
                     <h2 className={`${libreBaskervilleBold.className} lg:text-5xl text-2xl text-sky-50`}>Book {bookNumber}</h2>
