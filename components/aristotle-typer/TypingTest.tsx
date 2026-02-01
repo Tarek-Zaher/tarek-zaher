@@ -46,7 +46,7 @@ export default function TypingTest({ referenceText, onComplete }: TypingTestProp
           const containerHeight = container.clientHeight;
           
           if (cursorTop + cursorHeight > containerScrollTop + containerHeight) {
-            container.scrollTop = cursorTop - containerHeight + (cursorHeight * 2) + 20;
+            container.scrollTop = cursorTop - containerHeight + (cursorHeight * 3) + 20;
           }
           
           if (cursorTop < containerScrollTop) {
@@ -155,7 +155,7 @@ export default function TypingTest({ referenceText, onComplete }: TypingTestProp
                                 </LineChart>
                             </ResponsiveContainer>
                         </div>)}
-                        {isCompleted && <p className={`${libreBaskervilleBold.className} text-base text-stone-900`}>{currentWpm} wpm</p>}
+                        {isCompleted && <p className={`${libreBaskervilleBold.className} text-base text-center text-stone-900`}>{currentWpm} wpm</p>}
                     </div>
 
                     <a href="/experiences/aristotle-typer/dashboard" className="justify-self-center">
@@ -164,7 +164,7 @@ export default function TypingTest({ referenceText, onComplete }: TypingTestProp
 
                     <div className="flex items-center gap-2 justify-self-end">
                         {!isCompleted && <p className={`${libreBaskervilleBold.className} text-base text-red-400`}>{currentErrors}</p>}
-                        {isCompleted && <p className={`${libreBaskervilleBold.className} text-base text-stone-900`}>{currentAccuracy}% accuracy</p>}
+                        {isCompleted && <p className={`${libreBaskervilleBold.className} text-base text-center text-stone-900`}>{currentAccuracy}% accuracy</p>}
                         <Target className={`w-8 h-8 ${isCompleted ? 'text-stone-900' : 'text-stone-700'}`} />
                     </div>
                 </div>
