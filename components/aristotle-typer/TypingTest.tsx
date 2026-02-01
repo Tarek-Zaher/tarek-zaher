@@ -78,7 +78,7 @@ export default function TypingTest({ referenceText, onComplete }: TypingTestProp
           onClick={() => inputRef.current?.focus()}
         >
 
-          <div ref={displayRef} className="text-xl leading-relaxed font-mono whitespace-pre-wrap p-6 rounded-lg cursor-text max-h-40 overflow-y-auto">
+          <div ref={displayRef} className="text-xl leading-relaxed font-mono whitespace-pre-wrap py-6 rounded-lg cursor-text max-h-40 overflow-y-auto">
             {referenceText.split('').map((char, index) => {
               const isTyped = index < userInput.length;
               const isCorrect = isTyped && userInput[index] === char;

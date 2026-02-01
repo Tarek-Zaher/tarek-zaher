@@ -3,7 +3,7 @@ import TypingTest from '../../../components/aristotle-typer/TypingTest';
 import { useSearchParams } from 'next/navigation';
 import nicomacheanEthics from './data/nicomachean-ethics.json';
 import { useState } from 'react';
-import { House } from 'lucide-react';
+import { House, Keyboard, Target } from 'lucide-react';
 import { saveProgress } from '../../../lib/storage';
 
 
@@ -25,10 +25,20 @@ export default function Type() {
 
     return (
         <div className={`px-8 py-4 text-lg leading-[2] tracking-wide lg:px-64`} onClick={() => document.querySelector('textarea')?.focus()}>
-            <div className="text-center">
-                <a href="/experiences/aristotle-typer/dashboard">
-                    <House className="w-8 h-8 inline-block text-stone-700" />
-                </a>
+            <div className="text-center mb-4">
+                <div className="flex justify-between">
+                    <div>
+                        <Keyboard className="w-8 h-8 inline-block text-stone-700" />
+                    </div>
+                    
+                    <a href="/experiences/aristotle-typer/dashboard">
+                        <House className="w-8 h-8 inline-block text-stone-700" />
+                    </a>
+
+                    <div>
+                        <Target className="w-8 h-8 inline-block text-stone-700" />
+                    </div>
+                </div>
             </div>
             <TypingTest referenceText={nicomacheanEthics.Books.find(( book ) => book.bookNumber === bookNumber)?.Sections?.find(( section ) => section.sectionNumber === selectedSection)?.text ?? ''} onComplete={handleComplete} />
             {isCompleted && <div className="text-center">
