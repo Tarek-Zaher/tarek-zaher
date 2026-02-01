@@ -1,7 +1,6 @@
 'use client';
 
-import { libreBaskervilleBold } from '../../components/layout';
-import { libreBaskervilleRegular } from '../../components/layout';
+import { libreBaskervilleRegular, libreBaskervilleBold } from '../../components/layout';
 import SectionCounter from './SectionCounter';
 import { Keyboard, Target, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
@@ -13,7 +12,7 @@ export default function BookBento( {bookNumber, description, averageWpm, accurac
     };
 
     return (
-        <div className="shadow-xl rounded-lg mb-16 p-4 bg-[var(--blue-bg-color)] border border-stone-600 mx-4">  
+        <div className="shadow-xl rounded-lg mb-16 p-4 bg-[var(--primary-bg-color)] lg: mx-0 mx-4">  
             <div key={bookNumber} className="lg:grid lg:grid-cols-4 lg:grid-rows-4 gap-4 rounded-lg p-4">
 
                 <div className="lg:col-span-3 lg:row-span-3 bg-[var(--dark-bg-color)] border border-stone-600 rounded-xl px-8 py-8 flex flex-wrap">
@@ -25,11 +24,11 @@ export default function BookBento( {bookNumber, description, averageWpm, accurac
                     <SectionCounter bookNumber={bookNumber} sendSection={handleSectionChange} selectedSection={selectedSection} />
                 </div>
 
-                <div className={`lg:col-span-1 lg:row-span-1 bg-gray-500 ${libreBaskervilleRegular.className} text-sky-50 text-center text-lg rounded-full content-center p-4 mt-4`}>
+                <div className={`lg:col-span-1 lg:row-span-1 bg-gray-500 ${libreBaskervilleRegular.className} text-sky-50 text-center text-md rounded-full content-center p-2 mt-4`}>
                     <p><Keyboard className="w-8 h-8 inline-block mr-2" />avg wpm: {averageWpm}</p>
                 </div>
 
-                <div className={`lg:col-span-1 lg:row-span-1 bg-gray-500 ${libreBaskervilleRegular.className} text-sky-50 text-center text-lg rounded-full content-center p-4 mt-4`}>
+                <div className={`lg:col-span-1 lg:row-span-1 bg-gray-500 ${libreBaskervilleRegular.className} text-sky-50 text-center text-md rounded-full content-center p-2 mt-4`}>
                     <p><Target className="w-8 h-8 inline-block mr-2" />accuracy: {accuracy}%</p>
                 </div>
 
