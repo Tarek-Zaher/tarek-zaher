@@ -85,7 +85,7 @@ export default function TypingTest({ referenceText, onComplete }: TypingTestProp
         calculateWpm();
 
         // Then update on interval
-        const interval = setInterval(calculateWpm, 1000);
+        const interval = setInterval(calculateWpm, 500);
 
         return () => clearInterval(interval);
     }, [startTime]);

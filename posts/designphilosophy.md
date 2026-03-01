@@ -1,0 +1,16 @@
+---
+title: "Designing Helpful Things"
+date: "2026-02-28"
+type: "Essay"
+color: "blue"
+---
+
+When embarking on any endeavor it's important to start with a few clear goals to guide your actions. My primary goal professionally is to make helpful things for other people as well as for myself. Why? I believe no other reason than that it brings me joy is needed. We all live in a tough world, and lead lives inundated with tough tasks, decisions, and hardships. Who wouldn't feel a brotherly sense of compassions and community with others in the same state as him? I feel a moral duty to follow through on the creation of anything I have the ability to make which might aid another or myself. 
+
+If being helpful is my goal, why not pack up and join The Peace Corps? Well, over the years through a mixture of curiosity and sheer circumstance I've developed a valuable set of skills programming software. The modern digital realm often appears to bring more harm than good, but I believe that how we use a tool determines its consequences, and others using the tool of software to do harm obligates others to use it do good rather than to abandon the enterprise altogether. However, not only can programming do a lot of good, it also happens to be extremely fun. It's the perfect mixture of logic and creativity, learning and muscle memory. I enjoy it. So I've chosen, among other things, to use it as a creative and professional outlet. 
+
+An ancillary goal of mine is to create more beauty. I love beautiful things, and participating in the act of their creation is an honor and a privilege. Therefore, I want the things I make to not only be helpful, but also beautiful. This means going the extra mile even when it may be easier not to. This means reiterating over and over again until something is finally right. This means a significant amount of trouble and effort that may not be strictly necessary, but which, I believe, is worth the beauty and excellence it provides. In the long run, everyone prefers something which has taken real dedication and effort to something which has not. I aim to provide the latter, even when spinning up a basic and usable proof of concept is as easy as typing a paragraph into a textbox. I'm happy to use AI tools to aid my endeavors, but I refuse to use them to justify putting out anything below my usual standards.
+
+Lastly, my third aim here is to learn. Choosing a product which uses a framework or language I haven't used before my introduce more time and difficulty, but I will seek out those challenges as the valuable opportunities they are. Learning is not just about producing greater work later on, but also about keeping your mind sharp. There is a natural pleasure to pushing yourself and figuring something out. Those who follow the philosophy of always being open to something new, I believe, fare better than those who do not. 
+
+These are the goals and principles I have for myself: helpfulness, beauty, and curiosity. I may as well emblazen them on the top of the site in bold. If you find you hold the same values that I do, let's work together! 
