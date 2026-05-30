@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@theme inline {
+  --font-libre-baskerville: var(--font-family-libre-baskerville), ui-serif, Georgia, serif;
+  --font-lato: var(--font-family-lato), ui-sans-serif, system-ui, sans-serif;
+  --font-cormorant: var(--font-family-cormorant), ui-serif, Georgia, serif;
+  --font-lexend: var(--font-family-lexend), ui-sans-serif, system-ui, sans-serif;
+  --font-bangers: var(--font-family-bangers), cursive;
+  --font-patrick-hand: var(--font-family-patrick-hand), cursive;
+  --font-press-start: var(--font-family-press-start), monospace;
+}
+
 :root {
   --primary-bg-color: #E8DDB5;
   --dark-bg-color: #392F2D;
@@ -44,11 +54,6 @@ body {
 a:hover {
   text-decoration: underline;
 }*/
-
-a {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
  
 img {
   max-width: 100%;

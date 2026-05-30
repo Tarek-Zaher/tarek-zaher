@@ -1,6 +1,5 @@
 'use client';
 
-import { libreBaskervilleRegular } from '../layout';
 import nicomacheanEthics from '../../pages/experiences/aristotle-typer/data/nicomachean-ethics.json';
 import { isSectionCompleted } from '../../lib/storage';
 import { useState, useEffect } from 'react';
@@ -11,7 +10,7 @@ export default function SectionCounter( {bookNumber, sendSection, selectedSectio
 
     return (
         <div>
-            <h3 className={`${libreBaskervilleRegular.className} text-base text-sky-50 text-center mb-4`}>Sections</h3>
+            <h3 className="text-base text-sky-50 text-center mb-4 font-libre-baskerville">Sections</h3>
             <div className="grid lg:grid-cols-3 md:grid-cols-8 sm:grid-cols-4 grid-cols-3 gap-5 justify-center justify-items-center">
                 {nicomacheanEthics.Books.find(( book ) => book.bookNumber === bookNumber).Sections.map(( section ) => {
                     const completed = mounted && isSectionCompleted(bookNumber, section.sectionNumber);

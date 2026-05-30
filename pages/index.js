@@ -3,8 +3,6 @@ import Layout, { siteTitle } from '../components/layout';
 import PostPreview from '../components/PostPreview.jsx'
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
-import { libreBaskervilleBold } from '../components/layout';
-import { libreBaskervilleRegular } from '../components/layout';
 import { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import SplitText from 'gsap/SplitText';
@@ -149,15 +147,15 @@ export default function Home({ allPostsData }) {
         <div className={`bg-[url(/images/clouds/beautiful_clouds.png)] m-[20px] bg-cover bg-center h-[250px] lg:h-auto lg:col-span-4 lg:row-span-3 ${utilStyles.bentoRectangle}`}></div>
 
         <div className={`${utilStyles.nameBento} m-[20px] bg-[#392F2D] text-sky-50 h-[250px] overflow-hidden lg:h-auto lg:col-span-4 lg:row-span-3 ${utilStyles.bentoRectangle}`}>
-          <h3 className={`p-8 text-2xl ${libreBaskervilleBold.className}`}>I'm</h3>
-          <h3 className={`stage1Text text-8xl lg:text-10xl px-8 my-4 lg:my-0 ${libreBaskervilleBold.className} h-auto`}>Tarek</h3>
-          <h3 className={`stage2Text text-5xl px-8 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a web developer</h3>
-          <h3 className={`stage3Text text-4xl px-8 lg:mb-10 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a WordPress expert</h3>
-          <h3 className={`stage4Text text-5xl px-8 lg:mb-10 lg:mt-4 lg:text-6xl ${libreBaskervilleBold.className} h-auto`}>a cloud watcher</h3>
+          <h3 className={`p-8 text-2xl font-libre-baskerville font-bold`}>I'm</h3>
+          <h3 className={`stage1Text text-8xl lg:text-10xl px-8 my-4 lg:my-0 font-libre-baskerville font-bold h-auto`}>Tarek</h3>
+          <h3 className={`stage2Text text-5xl px-8 lg:mt-4 lg:text-6xl font-libre-baskerville font-bold h-auto`}>a web developer</h3>
+          <h3 className={`stage3Text text-4xl px-8 lg:mb-10 lg:mt-4 lg:text-6xl font-libre-baskerville font-bold h-auto`}>a WordPress expert</h3>
+          <h3 className={`stage4Text text-5xl px-8 lg:mb-10 lg:mt-4 lg:text-6xl font-libre-baskerville font-bold h-auto`}>a cloud watcher</h3>
         </div>
 
         <div class="lg:col-span-5 lg:row-span-4">
-          <h2 className={`passionStatement split m-[20px] lg:mt-0 px-4 pt-4 pb-0 text-neutral-800 text-xl lg:text-3xl ${libreBaskervilleBold.className}`}>I'm passionate about creating engaging web experiences and appreciating the beauty of the world around us.</h2>
+          <h2 className={`passionStatement split m-[20px] lg:mt-0 px-4 pt-4 pb-0 text-neutral-800 text-xl lg:text-3xl font-libre-baskerville font-bold`}>I'm passionate about creating engaging web experiences and appreciating the beauty of the world around us.</h2>
 
           <div className="circles flex items-center justify-center my-8 lg:my-16">
             <div className="grid grid-cols-4 gap-1 lg:gap-4 w-[85%] max-w-lg">
@@ -182,7 +180,7 @@ export default function Home({ allPostsData }) {
       </section>
 
       <section id="posts" className={`border-b border-[#392F2D] prose max-w-none h-auto`}>
-        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-8`}>Posts</h2>
+        <h2 className={`${utilStyles.headingLg} font-libre-baskerville px-8`}>Posts</h2>
 
         {allPostsData.slice(0, numberOfPostPreviews).map((postData, index, arr) => (
           <PostPreview
@@ -195,9 +193,9 @@ export default function Home({ allPostsData }) {
         ))}
 
         {numberOfPostPreviews < 4 ?
-          <h5 className={`text-center pb-8 text-sm cursor-pointer ${libreBaskervilleRegular.className}`} onClick={() => setNumberOfPostPreviews((prev) => prev + (allPostsData.length - prev))}>Show All</h5>
+          <h5 className={`text-center pb-8 text-sm cursor-pointer font-libre-baskerville`} onClick={() => setNumberOfPostPreviews((prev) => prev + (allPostsData.length - prev))}>Show All</h5>
           :
-          <h5 className={`text-center pb-8 text-sm cursor-pointer ${libreBaskervilleRegular.className}`} onClick={
+          <h5 className={`text-center pb-8 text-sm cursor-pointer font-libre-baskerville`} onClick={
             () => {
               setNumberOfPostPreviews(3);
 
@@ -211,14 +209,14 @@ export default function Home({ allPostsData }) {
       </section>
 
 {//     <section id="sketches" className={`border-b border-[#392F2D] max-w-none h-auto`}>
-//        <h2 className={`${utilStyles.headingLg} ${libreBaskervilleRegular.className} px-8`}>Sketches</h2>
+//        <h2 className={`${utilStyles.headingLg} font-libre-baskerville px-8`}>Sketches</h2>
 //
 //        <iframe class="w-[400px] h-[542px] m-8" src="https://editor.p5js.org/Tarek-Zaher/full/KXK97_BTS"></iframe>
 //        <iframe class="w[400px] h-[442px] m-8" src="https://editor.p5js.org/Tarek-Zaher/full/L3ovyshcM"></iframe>
 //      </section>
 }
       <footer class="py-32">
-        <h5 className={`text-5xl text-center pb-10 ${libreBaskervilleRegular.className}`}>Thank you!</h5>
+        <h5 className={`text-5xl text-center pb-10 font-libre-baskerville`}>Thank you!</h5>
 
         <div className="circles flex items-center justify-center">
           <div className="grid grid-cols-2 grid-rows-2 gap-3">

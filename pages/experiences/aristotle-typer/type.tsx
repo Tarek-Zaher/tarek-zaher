@@ -1,4 +1,3 @@
-import { libreBaskervilleBold, libreBaskervilleRegular } from '../../../components/layout';
 import TypingTest from '../../../components/aristotle-typer/TypingTest';
 import { useSearchParams } from 'next/navigation';
 import nicomacheanEthics from './data/nicomachean-ethics.json';

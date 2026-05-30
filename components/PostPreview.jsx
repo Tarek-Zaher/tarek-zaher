@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
 import gsap from 'gsap';
-import { libreBaskervilleRegular, latoRegular } from '../components/layout';
 import { colorPalette } from '../lib/colorPalette';
 
 export default function PostPreview({ postData, height, overlap, zIndex }) {
@@ -55,10 +54,10 @@ export default function PostPreview({ postData, height, overlap, zIndex }) {
         <div
             ref={ref}
             onClick={handleClick}
-            className={`postPreview prose text-center relative text-[#181818] cursor-pointer mx-[20px] mb-[20px] max-w-none ${overlap ? 'mt-[-150px] overlapper' : ''} border-0 rounded-[50px] ${libreBaskervilleRegular.className}`}
+            className={`postPreview prose text-center relative text-[#181818] cursor-pointer mx-[20px] mb-[20px] max-w-none ${overlap ? 'mt-[-150px] overlapper' : ''} border-0 rounded-[50px] font-libre-baskerville`}
             style={{ backgroundColor: postColor, height, zIndex }}
         >
-            <h5 className={`text-xs text- pt-3 px-[10px] pb-[10px] text-center uppercase ${latoRegular.className}`}>{postData.type}</h5>
+            <h5 className="text-xs text- pt-3 px-[10px] pb-[10px] text-center uppercase font-lato">{postData.type}</h5>
             <h2 className={`text-center text-[1.5rem] leading-[1.4] px-16 mt-2 font-normal`}>{postData.title}</h2>
         </div>
     );

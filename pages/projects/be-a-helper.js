@@ -1,24 +1,6 @@
-import { Cormorant, Lexend } from 'next/font/google';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Layout from '../../components/layout';
-
-
-
-const headerFont = Cormorant({
-    subsets: ['latin'],
-    weight: '700',
-})
-
-const bodyFont = Lexend({
-    subsets: ['latin'],
-    weight: '400',
-})
-
-const bodyFontBold = Lexend({
-    subsets: ['latin'],
-    weight: '700',
-})
 
 export async function getServerSideProps() {
     const rawSummaryData = await fetch('https://data.techforpalestine.org/api/v3/summary.json');
@@ -81,43 +63,43 @@ export default function HelperHomePage({ totalKilled, childrenKilled, womenKille
         <Layout>
 
             <section className={`bg-[#007A3D] py-16`}>
-                <p className={`${bodyFont.className} px-2 text-center text-white text-xl`}>“When I was a boy and I would see scary things in the news, my mother would say to me, 'Look for the helpers. You will always find people who are helping.'"<br></br><br></br>-Mr. Rogers</p>
+                <p className={`font-lexend px-2 text-center text-white text-xl`}>“When I was a boy and I would see scary things in the news, my mother would say to me, 'Look for the helpers. You will always find people who are helping.'"<br></br><br></br>-Mr. Rogers</p>
             </section>
 
             <section class="py-8">
-                <h1 className={`${headerFont.className} text-7xl px-4 pb-8`}>{today}</h1>
-                <p className={`${bodyFont.className} px-4 text-base`}>
-                    As of today, The Gaza Health Ministry reports <span className={`${bodyFontBold.className} text-[#CE1126]`}>{injured.toLocaleString()}</span> Palestinians have been injured in Gaza. 
-                    <span className={`${bodyFontBold.className} text-[#CE1126]`}> {totalKilled.toLocaleString()}</span> have been killed.
-                    Of those deaths, <span className={`${bodyFontBold.className} text-[#CE1126]`}>{womenKilled.toLocaleString()}</span> were women and <span className={`${bodyFontBold.className} text-[#CE1126]`}>{childrenKilled.toLocaleString()}</span> were chilren.
-                    It has been <span className={`${bodyFontBold.className} text-[#CE1126]`}>{getTimeSinceSufficientAid()} days</span> since sufficient humanitarian aid has been allowed into Gaza. <a href="https://data.techforpalestine.org/docs/summary/">[source]</a></p>
+                <h1 className={`font-cormorant text-7xl px-4 pb-8`}>{today}</h1>
+                <p className={`font-lexend px-4 text-base`}>
+                    As of today, The Gaza Health Ministry reports <span className={`font-lexend font-bold text-[#CE1126]`}>{injured.toLocaleString()}</span> Palestinians have been injured in Gaza. 
+                    <span className={`font-lexend font-bold text-[#CE1126]`}> {totalKilled.toLocaleString()}</span> have been killed.
+                    Of those deaths, <span className={`font-lexend font-bold text-[#CE1126]`}>{womenKilled.toLocaleString()}</span> were women and <span className={`font-lexend font-bold text-[#CE1126]`}>{childrenKilled.toLocaleString()}</span> were chilren.
+                    It has been <span className={`font-lexend font-bold text-[#CE1126]`}>{getTimeSinceSufficientAid()} days</span> since sufficient humanitarian aid has been allowed into Gaza. <a href="https://data.techforpalestine.org/docs/summary/">[source]</a></p>
 
                 <div class="m-4 bg-black text-white rounded-md p-4">
-                    <h2 className={`${headerFont.className} text-5xl p-2`}>Donate</h2>
-                    <h4 className={`${bodyFont.className} p-2`}><a href="https://www.map.org.uk/" target="_blank">Medical Aid for Palestinians (MAP)</a></h4>
-                    <ul className={`${bodyFont.className} list-disc  pb-2 pr-2 pl-10`}>
-                        <li class="pb-2"><span className={`${bodyFontBold.className}`}>Focus:</span> Emergency healthcare, psychosocial support, maternal care.</li>
-                        <li><span className={`${bodyFontBold.className}`}>Credibility:</span> UK-registered charity with long-standing work in Gaza and the West Bank.</li>
+                    <h2 className={`font-cormorant text-5xl p-2`}>Donate</h2>
+                    <h4 className={`font-lexend p-2`}><a href="https://www.map.org.uk/" target="_blank">Medical Aid for Palestinians (MAP)</a></h4>
+                    <ul className={`font-lexend list-disc  pb-2 pr-2 pl-10`}>
+                        <li class="pb-2"><span className={`font-lexend font-bold`}>Focus:</span> Emergency healthcare, psychosocial support, maternal care.</li>
+                        <li><span className={`font-lexend font-bold`}>Credibility:</span> UK-registered charity with long-standing work in Gaza and the West Bank.</li>
                     </ul>
-                    <button className={`${bodyFontBold.className} bg-[#CE1126] ml-10 mt-2 py-2 px-8 rounded-md`}><a class="" href="https://www.map.org.uk/?form=FUNFXHDCJPK" target="_blank">Donate Now</a></button>
+                    <button className={`font-lexend font-bold bg-[#CE1126] ml-10 mt-2 py-2 px-8 rounded-md`}><a class="" href="https://www.map.org.uk/?form=FUNFXHDCJPK" target="_blank">Donate Now</a></button>
                 </div>
 
                 <div class="m-4 bg-black text-white rounded-md p-4">
-                    <h2 className={`${headerFont.className} text-5xl p-2`}>Lobby</h2>
-                    <h4 className={`${bodyFont.className} p-2`}>Contact your representatives in Congress.</h4>
-                    <ul className={`${bodyFont.className} list-disc  pb-2 pr-2 pl-10`}>
-                        <li class="pb-2"><span className={`${bodyFontBold.className}`}>Why it matters:</span> Congressional offices track every call. Large volumes signal urgency and can influence public statements or votes.</li>
-                        <li><span className={`${bodyFontBold.className}`}>What to say:</span> Ask your representative to support a humanitarian ceasefire and restore aid to Gaza.</li>
+                    <h2 className={`font-cormorant text-5xl p-2`}>Lobby</h2>
+                    <h4 className={`font-lexend p-2`}>Contact your representatives in Congress.</h4>
+                    <ul className={`font-lexend list-disc  pb-2 pr-2 pl-10`}>
+                        <li class="pb-2"><span className={`font-lexend font-bold`}>Why it matters:</span> Congressional offices track every call. Large volumes signal urgency and can influence public statements or votes.</li>
+                        <li><span className={`font-lexend font-bold`}>What to say:</span> Ask your representative to support a humanitarian ceasefire and restore aid to Gaza.</li>
                     </ul>
-                    <button className={`${bodyFontBold.className} bg-[#CE1126] ml-10 mt-2 py-2 px-8 rounded-md`}><a class="" href="https://www.congress.gov/members/find-your-member" target="_blank">Find My Representatives</a></button>
+                    <button className={`font-lexend font-bold bg-[#CE1126] ml-10 mt-2 py-2 px-8 rounded-md`}><a class="" href="https://www.congress.gov/members/find-your-member" target="_blank">Find My Representatives</a></button>
                 </div>
 
             </section>
 
             <section class="py-8 bg-[#CE1126]">
-                <h1 className={`${headerFont.className} text-7xl px-4 pb-8 text-center text-white`}>Lost Birthdays</h1>
+                <h1 className={`font-cormorant text-7xl px-4 pb-8 text-center text-white`}>Lost Birthdays</h1>
                 {bornToday.map((person, index) => (
-                    <p key={index} className={`${bodyFont.className} text-white text-center pb-4`}>
+                    <p key={index} className={`font-lexend text-white text-center pb-4`}>
                         {person.en_name}<br></br>
                         {person.name}<br></br>
                         Born {new Date(person.dob).toLocaleDateString('en-US', {

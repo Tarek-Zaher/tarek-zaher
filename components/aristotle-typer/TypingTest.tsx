@@ -2,7 +2,6 @@
 
 import { House, Keyboard, Target } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
-import { libreBaskervilleRegular, libreBaskervilleBold } from '../../components/layout';
 import { LineChart, Line, ResponsiveContainer } from 'recharts';
 
 interface TypingTestProps {
@@ -155,7 +154,7 @@ export default function TypingTest({ referenceText, onComplete }: TypingTestProp
                                 </LineChart>
                             </ResponsiveContainer>
                         </div>)}
-                        {isCompleted && <p className={`${libreBaskervilleBold.className} text-base text-center text-stone-900`}>{currentWpm} wpm</p>}
+                        {isCompleted && <p className={`font-libre-baskerville font-bold text-base text-center text-stone-900`}>{currentWpm} wpm</p>}
                     </div>
 
                     <a href="/experiences/aristotle-typer/dashboard" className="justify-self-center">
@@ -163,8 +162,8 @@ export default function TypingTest({ referenceText, onComplete }: TypingTestProp
                     </a>
 
                     <div className="flex items-center gap-2 justify-self-end">
-                        {!isCompleted && <p className={`${libreBaskervilleBold.className} text-base text-red-400`}>{currentErrors}</p>}
-                        {isCompleted && <p className={`${libreBaskervilleBold.className} text-base text-center text-stone-900`}>{currentAccuracy}% accuracy</p>}
+                        {!isCompleted && <p className={`font-libre-baskerville font-bold text-base text-red-400`}>{currentErrors}</p>}
+                        {isCompleted && <p className={`font-libre-baskerville font-bold text-base text-center text-stone-900`}>{currentAccuracy}% accuracy</p>}
                         <Target className={`w-8 h-8 ${isCompleted ? 'text-stone-900' : 'text-stone-700'}`} />
                     </div>
                 </div>

@@ -1,20 +1,8 @@
 import Head from 'next/head';
-import { Bangers } from 'next/font/google';
-import { Patrick_Hand } from 'next/font/google';
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import Starfield from "/components/Starfield.tsx";
+import Starfield from "/components/ambient-backgrounds/Starfield.tsx";
 
-
-const bangers = Bangers({
-    subsets: ['latin'],
-    weight: '400',
-});
-
-const patrickHand = Patrick_Hand({
-    subsets: ['latin'],
-    weight: '400',
-});
 
 export default function TheIrons() {
 
@@ -88,8 +76,8 @@ export default function TheIrons() {
                     <img ref={peterClearBoyRef} className="w-[65%] mx-auto mt-8" src="/images/the-irons/peter-clear-boy.svg" alt="Peter Clear Boy" />
 
                     <div>
-                        <h1 className={`${bangers.className} text-6xl text-center text-[#EFA111] pt-4`} style={{ textShadow: '6px 0 0 #A7201D', WebkitTextStroke: '1px black' }}>The Hero's Journey</h1>
-                        <h6 className={`${patrickHand.className} text-center text-gray-50`}>A fan project by Tarek Zaher</h6>
+                        <h1 className="font-bangers text-6xl text-center text-[#EFA111] pt-4" style={{ textShadow: '6px 0 0 #A7201D', WebkitTextStroke: '1px black' }}>The Hero's Journey</h1>
+                        <h6 className="font-patrick-hand text-center text-gray-50">A fan project by Tarek Zaher</h6>
                     </div>
 
                     <div className="w-[80%] h-auto overflow-hidden mt-8 mx-auto">

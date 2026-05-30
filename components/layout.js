@@ -3,23 +3,7 @@ import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
-import { Libre_Baskerville, Lato } from 'next/font/google';
 import Header from '../components/header';
-
-export const libreBaskervilleBold = Libre_Baskerville({
-  subsets: ['latin'],
-  weight: '700',
-});
-
-export const libreBaskervilleRegular = Libre_Baskerville({
-  subsets: ['latin'],
-  weight: '400',
-});
-
-export const latoRegular = Lato({
-  subsets: ['latin'],
-  weight: '400',
-});
 
 const name = 'Tarek Zaher';
 export const siteTitle = 'Tarek Zaher';

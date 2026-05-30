@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-import { videoGameFont } from '../../components/anniversary/DialogueScene';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
@@ -79,7 +78,7 @@ export default function MemoryPuzzleScene({ title, date, images, prompts, forgot
     const allSolved = solved.every(Boolean);
 
     return (
-        <div className={`grid grid-cols-1 grid-rows-3 lg: grid-cols-8 lg:grid-rows-1 bg-[#537A5A] lg:h-[100vh] w-[100%] ${videoGameFont.className}`}>
+        <div className="grid grid-cols-1 grid-rows-3 lg: grid-cols-8 lg:grid-rows-1 bg-[#537A5A] lg:h-[100vh] w-[100%] font-press-start">
             {/*Memories Section*/}
             <div className={`bg-[#343941] col-span-full lg:col-span-1 row-start-2 lg:row-start-1 text-center py-4 text-sm tracking-widest`}>
                 <p className={`text-white mb-4`}>Memories</p>

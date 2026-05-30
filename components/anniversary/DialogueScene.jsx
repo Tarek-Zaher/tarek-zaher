@@ -1,16 +1,9 @@
-import { Press_Start_2P } from 'next/font/google';
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import SplitText from 'gsap/SplitText';
 
 gsap.registerPlugin(useGSAP, SplitText);
-
-export const videoGameFont = Press_Start_2P({
-    subsets: ['latin'],
-    weight: '400',
-})
-
 
 export default function DialogueScene({ background, character, message, onBack, onNext, forgottenMemories, memories }) {
 
@@ -42,7 +35,7 @@ export default function DialogueScene({ background, character, message, onBack, 
     }, { dependencies: [memories], scope: memRef });
 
     return (
-        <div className={`w-full h-screen bg-black flex text-white ${videoGameFont.className}`}>
+        <div className={`w-full h-screen bg-black flex text-white font-press-start`}>
             <div ref={memRef} className="w-[200px] bg-[#343941] text-center py-4 text-sm tracking-widest">
                 <p className="text-white mb-4">Memories</p>
                 {[...Array(memories)].map((_, i) => (
@@ -63,24 +56,24 @@ export default function DialogueScene({ background, character, message, onBack, 
             >
 
 
-                <div className={`absolute bottom-0 w-full px-6 pb-8 ${videoGameFont.className}`}>
+                <div className={`absolute bottom-0 w-full px-6 pb-8 font-press-start`}>
                     <div className="relative left-13 bottom-0">
                         <img src={character.image} alt={character.name} className="w-32 rounded-lg" />
                         <div
-                            className={`absolute -bottom-8 left-3 z-99 bg-[#8DA9C4] px-4 py-3 text-black font-mono text-sm shadow-lg/40 ${videoGameFont.className}`}
+                            className={`absolute -bottom-8 left-3 z-99 bg-[#8DA9C4] px-4 py-3 text-black font-mono text-sm shadow-lg/40 font-press-start`}
                         >
                             {character.name}
                         </div>
                     </div>
 
                     <div className="bg-[#EEF4ED] p-12 shadow font-mono text-black relative">
-                        <p ref={messageRef} className={`text-center text-lg ${videoGameFont.className}`}>
+                        <p ref={messageRef} className={`text-center text-lg font-press-start`}>
                             {message}
                         </p>
-                        <button onClick={onBack} className={`absolute -bottom-4 left-3 bg-[#898D97] px-4 py-3 text-black rounded-full cursor-pointer text-xs ${videoGameFont.className}`}>
+                        <button onClick={onBack} className={`absolute -bottom-4 left-3 bg-[#898D97] px-4 py-3 text-black rounded-full cursor-pointer text-xs font-press-start`}>
                             ...
                         </button>
-                        <button onClick={onNext} className={`absolute -bottom-4 -right-3 bg-[#FF6B6B] px-4 py-3 text-black rounded cursor-pointer text-xs ${videoGameFont.className}`}>
+                        <button onClick={onNext} className={`absolute -bottom-4 -right-3 bg-[#FF6B6B] px-4 py-3 text-black rounded cursor-pointer text-xs font-press-start`}>
                             Next
                         </button>
                     </div>
