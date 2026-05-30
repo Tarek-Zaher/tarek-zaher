@@ -21,7 +21,8 @@ export default function Stars() {
             <div className="flex flex-col items-center justify-center h-screen text-center">
                 <h1 className=" 
                 text-mist-100 
-                text-[10rem] 
+                text-6xl
+                md:text-[10rem] 
                 font-libre-baskerville 
                 tracking-wide
                 ">Space</h1>
