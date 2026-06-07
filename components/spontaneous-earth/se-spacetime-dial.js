@@ -135,8 +135,12 @@ export default function SpacetimeDial() {
           />
         )}
 
-        {/* draggable dot — last so it sits on top */}
-        <circle ref={dotRef} cx={cx0} cy={cy0} r="8" className="fill-mist-800" style={{ cursor: 'grab' }} />
+        {/* draggable group: big invisible hit area + visible dot, dragged together */}
+        <g ref={dotRef} style={{ cursor: 'grab' }}>
+          {/* transparent (not none!) so it still captures pointer/touch events */}
+          <circle cx={cx0} cy={cy0} r="22" fill="transparent" />
+          <circle cx={cx0} cy={cy0} r="8" className="fill-mist-800" />
+        </g>
       </svg>
     </div>
   );
