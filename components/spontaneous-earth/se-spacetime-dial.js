@@ -12,6 +12,16 @@ const OY = 256; // origin y
 const R = 240; // axis length === circle radius (the "speed of light")
 const INIT = Math.PI / 4; // start the dot at 45°
 
+// gauge centers (must match the <circle> centers in the JSX below)
+const ODO_X = SIZE - SIZE / 3; // speed odometer center x
+const ODO_Y = 25;
+const NEEDLE_LEN = 20; // needle reaches from pivot toward the rim
+const CLK_X = SIZE - 25; // clock center x
+const CLK_Y = 20;
+const CLK_MAX_SPEED = 30; // hand speed multiplier when timePct === 100 (super fast)
+const CLK_MIN_SPEED = 0.15; // floor so even timePct === 1 still creeps (only 0 fully stops)
+const CLK_SPEED_EXP = 2; // >1 makes the curve dramatic: low/mid stay calm, top explodes
+
 // Build the quarter circle as a polyline so it matches the dot's math exactly
 // (avoids SVG arc-flag guesswork and any drift vs. the dragged point).
 function arcPath() {
@@ -33,6 +43,10 @@ export default function SpacetimeDial() {
   const dotRef = useRef();
   const ringRef = useRef();
   const hintRef = useRef(); // the pulsing-ring tween, so we can kill it on first grab
+  const needleRef = useRef(); // odometer needle (rotates with spacePct)
+  const minuteRef = useRef(); // clock minute hand
+  const hourRef = useRef(); // clock hour hand
+  const clockTweens = useRef([]); // the two infinite hand spins, so we can timeScale them
   const [angle, setAngle] = useState(INIT);
   const [moved, setMoved] = useState(false);
 
@@ -46,7 +60,7 @@ export default function SpacetimeDial() {
       hintRef.current = gsap.fromTo(
         ringRef.current,
         { attr: { r: 9 }, opacity: 0.6 },
-        { attr: { r: 22 }, opacity: 0, duration: 1.3, repeat: -1, repeatDelay: 3, ease: 'sine.out' }
+        { attr: { r: 22 }, opacity: 0, duration: 1.3, repeat: -1, repeatDelay: 1.5, ease: 'sine.out' }
       );
 
       Draggable.create(dotRef.current, {
@@ -74,6 +88,25 @@ export default function SpacetimeDial() {
           },
         },
       });
+
+      // clock hands spin forever; the timePct effect below scales their speed.
+      // minute hand makes a full turn in 6s, hour hand 12x slower (72s).
+      clockTweens.current = [
+        gsap.to(minuteRef.current, {
+          rotation: 360,
+          svgOrigin: `${CLK_X} ${CLK_Y}`,
+          duration: 6,
+          ease: 'none',
+          repeat: -1,
+        }),
+        gsap.to(hourRef.current, {
+          rotation: 360,
+          svgOrigin: `${CLK_X} ${CLK_Y}`,
+          duration: 72,
+          ease: 'none',
+          repeat: -1,
+        }),
+      ];
     },
     { scope }
   );
@@ -85,6 +118,31 @@ export default function SpacetimeDial() {
   // always total 100%. Derive time as the remainder so rounding never drifts.
   const spacePct = Math.round(Math.sin(angle) ** 2 * 100);
   const timePct = 100 - spacePct;
+
+  // odometer needle: spacePct 0 → points left, 100 → points right (sweeps the top)
+  useGSAP(
+    () => {
+      gsap.to(needleRef.current, {
+        rotation: (spacePct / 100) * 180,
+        svgOrigin: `${ODO_X} ${ODO_Y}`,
+        duration: 0.3,
+        ease: 'power2.out',
+      });
+    },
+    { scope, dependencies: [spacePct] }
+  );
+
+  // clock speed: scale both hand spins by timePct (0 → frozen, 100 → fastest)
+  useGSAP(
+    () => {
+      const speed =
+        timePct === 0
+          ? 0 // a true standstill only at exactly 0
+          : CLK_MIN_SPEED + (CLK_MAX_SPEED - CLK_MIN_SPEED) * (timePct / 100) ** CLK_SPEED_EXP;
+      clockTweens.current.forEach((t) => t && t.timeScale(speed));
+    },
+    { scope, dependencies: [timePct] }
+  );
 
   return (
     <div ref={scope} className="w-xs md:w-xl mx-auto mt-8 flex flex-col items-center">
@@ -120,6 +178,21 @@ export default function SpacetimeDial() {
         >
           → motion through space: {spacePct}
         </text>
+
+        {/* odometer + clock */}
+        <circle r="26" cx={SIZE - (SIZE / 3)} cy="25" className="stroke-mist-800 fill-none"></circle>
+        <circle r="25" cx={SIZE - (SIZE / 3)} cy="25" className="stroke-mist-800 fill-none" stroke-dasharray="1 7" stroke-width="3" stroke-dashoffset="-1.2"></circle>
+        <rect width="55" height="28" x={SIZE - (SIZE / 3) - 28} y="25" fill="#E8DDB5"></rect>
+        <path ref={needleRef} className="needle-odometer stroke-mist-800" strokeWidth="1.2" fill="none" d={`M ${ODO_X} ${ODO_Y} L ${ODO_X - NEEDLE_LEN} ${ODO_Y}`} />
+        <circle className="fill-mist-800" r="3" cx={SIZE - (SIZE / 3)} cy="25"></circle>
+        <text x={SIZE - (SIZE / 3)} y="40" textAnchor="middle" className="font-cormorant text-xs">mph</text>
+
+        <circle r="21" cx={SIZE - 25} cy="20" className="stroke-mist-800 fill-none"></circle>
+        <circle r="20" cx={SIZE - 25} cy="20" className="stroke-mist-800 fill-none" stroke-dasharray="1 9.4" stroke-width="3" stroke-dashoffset="-1.2"></circle>
+        <circle r="2" cx={SIZE - 25} cy="20" className="fill-mist-800"></circle>
+        <path ref={minuteRef} className="clock-minute stroke-mist-800" strokeWidth="1.2" fill="none" d={`M ${CLK_X} ${CLK_Y} L ${CLK_X} ${CLK_Y - 14}`} />
+        <path ref={hourRef} className="clock-hour stroke-mist-800" strokeWidth="1.6" fill="none" d={`M ${CLK_X} ${CLK_Y} L ${CLK_X} ${CLK_Y - 9}`} />
+
 
         {/* "drag me" hint ring — pulses until the first interaction */}
         {!moved && (

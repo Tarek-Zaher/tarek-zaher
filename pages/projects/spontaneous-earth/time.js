@@ -6,9 +6,9 @@ export default function Gravity() {
     return (
         <div>
             <div className="mb-8">
-                <SEHeader title="Gravity" number="1" />
+                <SEHeader title="Time" number="1" />
                 <h5 className="italic tracking-wide text-mist-700 text-center
-                content-center w-xs md:w-xl mx-auto mt-32 mb-28">
+                content-center w-xs md:w-xl mx-auto mt-28 mb-28">
                     Despite what you may have been taught, high-mass objects like the Earth don't
                     actually pull things towards them. Gravity isn't a force in the traditional sense. Instead, it's
                     the result of the warping of spacetime by matter in the universe.
@@ -24,7 +24,7 @@ export default function Gravity() {
                     w-xs md:w-xl flex-1
                     content-center mx-auto mb-32
                     ">
-                        How does gravity make things fall?
+                        Does time tick at the same rate for everyone?
                     </h1>
                 
                <div className="w-xs md:w-xl mx-auto">
@@ -44,10 +44,11 @@ export default function Gravity() {
                     <p className="
                         text-mist-800 font-lato text-base
                     ">
-                        In fact, time and space are so intricately bound up 
-                        with each other that the faster you travel through space 
+                        In fact, the faster you travel through space 
                         the slower you travel through time and vice versa! Every 
-                        object in the universe is moving at the exact same speed.
+                        object in the universe is moving at the exact same speed,
+                        that speed is just divided between movement through space
+                        and movement through time.
                     </p>
                     <SpacetimeDial />
                 </div>
