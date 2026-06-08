@@ -10,7 +10,7 @@ const SIZE = 300;
 const OX = 44; // origin x (corner where both axes meet)
 const OY = 256; // origin y
 const R = 240; // axis length === circle radius (the "speed of light")
-const INIT = Math.PI / 4; // start the dot at 45°
+const INIT = Math.PI / 2.5; // start the dot at 45°
 
 // gauge centers (must match the <circle> centers in the JSX below)
 const ODO_X = SIZE - SIZE / 3; // speed odometer center x
@@ -18,9 +18,9 @@ const ODO_Y = 25;
 const NEEDLE_LEN = 20; // needle reaches from pivot toward the rim
 const CLK_X = SIZE - 25; // clock center x
 const CLK_Y = 20;
-const CLK_MAX_SPEED = 30; // hand speed multiplier when timePct === 100 (super fast)
+const CLK_MAX_SPEED = 40; // hand speed multiplier when timePct === 100 (super fast)
 const CLK_MIN_SPEED = 0.15; // floor so even timePct === 1 still creeps (only 0 fully stops)
-const CLK_SPEED_EXP = 2; // >1 makes the curve dramatic: low/mid stay calm, top explodes
+const CLK_SPEED_EXP = 4; // >1 makes the curve dramatic: low/mid stay calm, top explodes
 
 // Build the quarter circle as a polyline so it matches the dot's math exactly
 // (avoids SVG arc-flag guesswork and any drift vs. the dragged point).
