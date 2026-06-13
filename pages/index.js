@@ -144,7 +144,7 @@ export default function Home({ allPostsData }) {
       </Head>
       <section id="introduction" className={`border-b border-[#392F2D] lg:grid lg:grid-flow-row-dense lg:grid-cols-8 lg:grid-rows-8 lg:h-[95vh] lg:gap-0`}>
 
-        <div className={`bg-[url(/images/clouds/beautiful_clouds.png)] m-[20px] bg-cover bg-center h-[250px] lg:h-auto lg:col-span-4 lg:row-span-3 ${utilStyles.bentoRectangle}`}></div>
+        <div className={`bg-[url(/images/clouds/beautiful_clouds.webp)] m-[20px] bg-cover bg-center h-[250px] lg:h-auto lg:col-span-4 lg:row-span-3 ${utilStyles.bentoRectangle}`}></div>
 
         <div className={`${utilStyles.nameBento} m-[20px] bg-[#392F2D] text-sky-50 h-[250px] overflow-hidden lg:h-auto lg:col-span-4 lg:row-span-3 ${utilStyles.bentoRectangle}`}>
           <h3 className={`p-8 text-2xl font-libre-baskerville font-bold`}>I'm</h3>
@@ -175,7 +175,7 @@ export default function Home({ allPostsData }) {
           </div>
         </div>
 
-        <div className={`bg-[url(/images/tarek.jpg)] m-[20px] bg-cover bg-center h-[500px] lg:h-auto lg:col-span-3 lg:row-span-5 ${utilStyles.bentoRectangle}`}></div>
+        <div className={`bg-[url(/images/tarek.webp)] m-[20px] bg-cover bg-center h-[500px] lg:h-auto lg:col-span-3 lg:row-span-5 ${utilStyles.bentoRectangle}`}></div>
 
       </section>
 
