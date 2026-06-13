@@ -14,10 +14,10 @@ export default function SpontaneousEarth() {
                         tracking-wide
                         mb-8
                         ">
-                            Spontaneous Earth
+                            Einstein's Theory of Relativity Explained
                     </h1>
                 <ol className="list-decimal list-inside font-cormorant text-xl">
-                    <li><Link href="/projects/spontaneous-earth/time">Time</Link></li>
+                    <li><Link href="/projects/relativity/time">Time</Link></li>
                 </ol>    
             </div>
         </>

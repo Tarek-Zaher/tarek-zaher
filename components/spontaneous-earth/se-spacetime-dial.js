@@ -166,7 +166,7 @@ export default function SpacetimeDial() {
 
         {/* axis labels */}
         <text x={OX + R / 2} y={OY + 30} textAnchor="middle" className="fill-mist-700 font-cormorant" fontSize="14">
-          → motion through time: {timePct}
+          → speed through time: {timePct}
         </text>
         <text
           x={OX - 30}
@@ -176,7 +176,7 @@ export default function SpacetimeDial() {
           className="fill-mist-700 font-cormorant"
           fontSize="14"
         >
-          → motion through space: {spacePct}
+          → speed through space: {spacePct}
         </text>
 
         {/* odometer + clock */}

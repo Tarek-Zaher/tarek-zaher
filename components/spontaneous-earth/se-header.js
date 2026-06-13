@@ -6,7 +6,7 @@ export default function SEHeader(props) {
         tracking-wide text-mist-800 text-center font-cormorant
         flex flex-row justify-between content-center w-xs md:w-xl mt-6 mx-auto">
             <div className="flex-1">
-                <Link href="/projects/spontaneous-earth">{props.title}</Link>
+                <Link href="/projects/relativity">{props.title}</Link>
             </div>
             <p className="">{props.number}</p>
         </header>
