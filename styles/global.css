@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@font-face {
+  font-family: 'Gladiola';
+  src: url('/fonts/GladoliaDEMO-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @theme inline {
   --font-libre-baskerville: var(--font-family-libre-baskerville), ui-serif, Georgia, serif;
   --font-lato: var(--font-family-lato), ui-sans-serif, system-ui, sans-serif;
@@ -9,6 +16,7 @@
   --font-bangers: var(--font-family-bangers), cursive;
   --font-patrick-hand: var(--font-family-patrick-hand), cursive;
   --font-press-start: var(--font-family-press-start), monospace;
+  --font-gladiola: 'Gladiola', serif;
 }
 
 :root {
