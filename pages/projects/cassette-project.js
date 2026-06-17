@@ -202,10 +202,11 @@ export default function CassetteProject() {
             <DitherGradientBackground palette={0} overlay="rgba(0,0,0,0.4)" />
 
             {/* Physics canvas — fixed full-viewport, sits behind all content.
-                touch-action:none prevents mobile scroll from hijacking drag gestures. */}
+                pan-y allows the page to scroll vertically on mobile while still
+                letting horizontal/diagonal cassette drags work. */}
             {mounted && (
-                <div style={{ position: 'fixed', inset: 0, zIndex: 1, touchAction: 'none' }}>
-                    <Canvas camera={{ position: [0, 0, 15], fov: 50 }}>
+                <div style={{ position: 'fixed', inset: 0, zIndex: 1, touchAction: 'pan-y' }}>
+                    <Canvas style={{ touchAction: 'pan-y' }} camera={{ position: [0, 0, 15], fov: 50 }}>
                         <ambientLight intensity={0.6} />
                         <directionalLight position={[4, 10, 5]} intensity={1.2} />
                         <Suspense fallback={null}>
@@ -217,7 +218,7 @@ export default function CassetteProject() {
 
             {/* Content — pointer-events-none passes drag clicks through to the canvas */}
             <div className="relative z-10 pointer-events-none">
-                <h1 className="text-4xl md:text-8xl text-center pt-16 font-gladiola text-slate-100 text-shadow-md text-shadow-[#8080D5]">
+                <h1 className="text-6xl md:text-8xl text-center pt-16 font-gladiola text-slate-100 text-shadow-md text-shadow-[#8080D5]">
                     Cassette Project
                 </h1>
                 <div className="pointer-events-auto" style={{ width: '100%', height: '420px' }}>
@@ -230,7 +231,7 @@ export default function CassetteProject() {
                         <OrbitControls enableZoom={false} enablePan={false} />
                     </Canvas>
                 </div>
-                <h2 className="text-2xl md:text-5xl text-slate-100 text-center mt-8 font-gladiola">How It Works:</h2>
+                <h2 className="text-4xl md:text-5xl text-slate-100 text-center mt-8 font-gladiola">How It Works:</h2>
                 <div className="flex flex-col md:flex-row justify-center text-center font-lexend text-xl pt-8 pb-72 md:pb-8 gap-8 md:gap-4">
                     <div className="p-6 md:p-6 md:basis-md border-1 border-white shadow-xl shadow-white">
                         <h6 className="pb-2">1</h6>
