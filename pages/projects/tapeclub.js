@@ -80,15 +80,22 @@ export default function TapeClub() {
                     <div className="w-xs mx-auto md:w-xl">
                         <img src="/images/tapeclub/HeroText.png" alt="A Piece of Someone's Life." className="mb-6 md:mb-4" />
                         <img src="/images/tapeclub/CassetteTape.png" alt="Picture of a cassette tape" className="mb-6 md:mb-2" />
-                        <div ref={containerRef} className="relative overflow-hidden">
+                        {/* Mobile: static stack of all slides */}
+                        <div className="md:hidden flex flex-col">
+                            {SLIDES.map((slide) => (
+                                <img key={slide.src} src={slide.src} alt={slide.alt} className="mb-4" />
+                            ))}
+                        </div>
+
+                        {/* Desktop: animated slider */}
+                        <div ref={containerRef} className="hidden md:block relative overflow-hidden">
                             {SLIDES.map((slide, i) => (
                                 <img
                                     key={slide.src}
                                     ref={el => slideRefs.current[i] = el}
                                     src={slide.src}
                                     alt={slide.alt}
-
-                                    className={`${i !== 0 ? ' absolute top-0 left-0 w-full' : ''}`}
+                                    className={`md:scale-75${i !== 0 ? ' absolute top-0 left-0 w-full' : ''}`}
                                 />
                             ))}
                         </div>
@@ -96,9 +103,9 @@ export default function TapeClub() {
                             src="/images/tapeclub/DownArrow.png"
                             alt="Down Arrow"
                             onClick={goNext}
-                            className="mx-auto scale-50 md:scale-75 mb-4 cursor-pointer"
+                            className="hidden md:block mx-auto md:scale-75 mb-4 cursor-pointer"
                         />
-                        <p className="text-white font-bold text-center text-[10px] md:text-xs mb-4 [text-shadow:0px_-6px_4px_rgba(28,57,146,0.25),0px_6px_4px_rgba(199,77,77,0.25),0px_0px_100px_rgba(255,255,255,0.5)] blur-[0.5px]">This is invite only. Inquiries and press, email <a href="mailto:hello@tapeclubatx.com">hello@tapeclubatx.com</a></p>
+                        <p className="text-white font-bold text-center text-[10px] md:text-xs mb-4 [text-shadow:0px_-6px_4px_rgba(28,57,146,0.25),0px_6px_4px_rgba(199,77,77,0.25),0px_0px_100px_rgba(255,255,255,0.5)] blur-[0.2px] md:blur-[0.5px]">This is invite only. Inquiries and press, email <a href="mailto:hello@tapeclubatx.com">hello@tapeclubatx.com</a></p>
                     </div>
                     <div className="hidden md:block w-32 mb-4 md:mb-8 mr-4 md:mr-8">
                         <img src="/images/tapeclub/TapeClubTextLogo.png" alt="Tape Club Logo" className="" />
