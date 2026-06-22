@@ -1,5 +1,4 @@
 import { useGSAP } from "@gsap/react";
-import gsap from 'gsap';
 import { useState, Suspense, useEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useGLTF, Text, OrbitControls } from '@react-three/drei';
