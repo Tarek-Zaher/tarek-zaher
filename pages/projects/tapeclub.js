@@ -105,7 +105,8 @@ export default function TapeClub() {
                             onClick={goNext}
                             className="hidden md:block mx-auto md:scale-75 mb-4 cursor-pointer"
                         />
-                        <p className="text-white font-bold text-center text-[10px] md:text-xs mb-4 [text-shadow:0px_-6px_4px_rgba(28,57,146,0.25),0px_6px_4px_rgba(199,77,77,0.25),0px_0px_100px_rgba(255,255,255,0.5)] md:blur-[0.5px]">This is invite only. Inquiries and press, email <a href="mailto:hello@tapeclubatx.com">hello@tapeclubatx.com</a></p>
+                        <img src="/images/tapeclub/SaleSticker.png" alt="Tape Club Logo" className="md:hidden mx-auto scale-75 -rotate-5 mb-4" />
+                        <p className="text-white font-bold text-center text-[10px] md:text-xs mb-4 [text-shadow:0px_-6px_4px_rgba(28,57,146,0.25),0px_6px_4px_rgba(199,77,77,0.25),0px_0px_100px_rgba(255,255,255,0.5)] blur-[0.1px] md:blur-[0.5px]">This is invite only. Inquiries and press, email <a href="mailto:hello@tapeclubatx.com">hello@tapeclubatx.com</a></p>
                     </div>
                     <div className="hidden md:block w-32 mb-4 md:mb-8 mr-4 md:mr-8">
                         <img src="/images/tapeclub/TapeClubTextLogo.png" alt="Tape Club Logo" className="" />
