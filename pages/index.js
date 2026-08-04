@@ -150,7 +150,7 @@ export default function Home({ allPostsData }) {
           <h3 className={`p-8 text-2xl font-libre-baskerville font-bold`}>I'm</h3>
           <h3 className={`stage1Text text-8xl lg:text-10xl px-8 my-4 lg:my-0 font-libre-baskerville font-bold h-auto`}>Tarek</h3>
           <h3 className={`stage2Text text-5xl px-8 lg:mt-4 lg:text-6xl font-libre-baskerville font-bold h-auto`}>a web developer</h3>
-          <h3 className={`stage3Text text-4xl px-8 lg:mb-10 lg:mt-4 lg:text-6xl font-libre-baskerville font-bold h-auto`}>a WordPress expert</h3>
+          <h3 className={`stage3Text text-4xl px-8 lg:mb-10 lg:mt-4 lg:text-6xl font-libre-baskerville font-bold h-auto`}>a writer</h3>
           <h3 className={`stage4Text text-5xl px-8 lg:mb-10 lg:mt-4 lg:text-6xl font-libre-baskerville font-bold h-auto`}>a cloud watcher</h3>
         </div>
 
